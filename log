@@ -1,0 +1,556 @@
+14:34:45,212 root INFO RIPPE
+14:34:50,695 root INFO file name: saved/gp_fixed_ylego.bz2
+14:37:51,514 root INFO RIPPE
+14:38:02,346 root INFO file name: saved/gp_fixed_ylego.bz2
+14:41:22,633 root INFO RIPPE
+14:41:29,687 root INFO file name: saved/gp_fixed_ylego.bz2
+14:44:39,425 root INFO RIPPE
+14:44:46,467 root INFO file name: saved/gp_fixed_ylego.bz2
+14:46:42,834 root INFO RIPPE
+14:46:48,106 root INFO file name: saved/gp_fixed_ylego.bz2
+14:47:26,231 root INFO RIPPE
+14:47:31,517 root INFO file name: saved/gp_fixed_ylego.bz2
+14:47:33,433 numexpr.utils INFO NumExpr defaulting to 2 threads.
+15:02:38,635 matplotlib.font_manager DEBUG findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0.
+15:02:38,636 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXGeneral' (STIXGeneralItalic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,636 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeOneSym' (STIXSizOneSymBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,636 matplotlib.font_manager DEBUG findfont: score(<Font 'cmb10' (cmb10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,636 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,637 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono.ttf) normal normal 400 normal>) = 10.05
+15:02:38,637 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans' (DejaVuSans-BoldOblique.ttf) oblique normal bold normal>) = 1.335
+15:02:38,637 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,637 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeThreeSym' (STIXSizThreeSymBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,637 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Oblique.ttf) oblique normal 400 normal>) = 1.05
+15:02:38,637 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXGeneral' (STIXGeneralBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,638 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeFourSym' (STIXSizFourSymBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,638 matplotlib.font_manager DEBUG findfont: score(<Font 'cmr10' (cmr10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,638 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,649 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeTwoSym' (STIXSizTwoSymBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,649 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,650 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Bold.ttf) normal normal bold normal>) = 0.33499999999999996
+15:02:38,650 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeFiveSym' (STIXSizFiveSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,650 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Display' (DejaVuSansDisplay.ttf) normal normal 400 normal>) = 10.05
+15:02:38,650 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeOneSym' (STIXSizOneSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,650 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,651 matplotlib.font_manager DEBUG findfont: score(<Font 'cmtt10' (cmtt10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,651 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXNonUnicode' (STIXNonUniBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,651 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif Display' (DejaVuSerifDisplay.ttf) normal normal 400 normal>) = 10.05
+15:02:38,651 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeTwoSym' (STIXSizTwoSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,651 matplotlib.font_manager DEBUG findfont: score(<Font 'cmsy10' (cmsy10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,652 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeFourSym' (STIXSizFourSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,652 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXNonUnicode' (STIXNonUniBolIta.ttf) italic normal bold normal>) = 11.335
+15:02:38,652 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXNonUnicode' (STIXNonUniIta.ttf) italic normal 400 normal>) = 11.05
+15:02:38,652 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeThreeSym' (STIXSizThreeSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,652 matplotlib.font_manager DEBUG findfont: score(<Font 'cmex10' (cmex10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,652 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,653 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif' (DejaVuSerif.ttf) normal normal 400 normal>) = 10.05
+15:02:38,659 matplotlib.font_manager DEBUG findfont: score(<Font 'cmss10' (cmss10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,660 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans' (DejaVuSans.ttf) normal normal 400 normal>) = 0.05
+15:02:38,660 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXGeneral' (STIXGeneral.ttf) normal normal regular normal>) = 10.05
+15:02:38,660 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXNonUnicode' (STIXNonUni.ttf) normal normal regular normal>) = 10.05
+15:02:38,660 matplotlib.font_manager DEBUG findfont: score(<Font 'cmmi10' (cmmi10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,660 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXGeneral' (STIXGeneralBolIta.ttf) italic normal bold normal>) = 11.335
+15:02:38,661 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Mono' (TlwgMono-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,661 matplotlib.font_manager DEBUG findfont: score(<Font 'Samyak Devanagari' (Samyak-Devanagari.ttf) normal normal 400 normal>) = 10.05
+15:02:38,661 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,661 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstOne' (KacstOne-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,661 matplotlib.font_manager DEBUG findfont: score(<Font 'Khmer OS' (KhmerOS.ttf) normal normal 400 normal>) = 10.05
+15:02:38,662 matplotlib.font_manager DEBUG findfont: score(<Font 'Meera' (Meera.ttf) normal normal 400 normal>) = 10.05
+15:02:38,662 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Serif' (LiberationSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,662 matplotlib.font_manager DEBUG findfont: score(<Font 'padmaa-Bold.1.1' (padmaa-Bold.1.1.ttf) normal normal bold normal>) = 10.335
+15:02:38,662 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Assamese' (Lohit-Assamese.ttf) normal normal 400 normal>) = 10.05
+15:02:38,662 matplotlib.font_manager DEBUG findfont: score(<Font 'Gargi' (Gargi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,662 matplotlib.font_manager DEBUG findfont: score(<Font 'Saab' (Saab.ttf) normal normal 400 normal>) = 10.05
+15:02:38,663 matplotlib.font_manager DEBUG findfont: score(<Font 'Loma' (Loma-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,663 matplotlib.font_manager DEBUG findfont: score(<Font 'Laksaman' (Laksaman-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,663 matplotlib.font_manager DEBUG findfont: score(<Font 'Kalimati' (kalimati.ttf) normal normal 400 normal>) = 10.05
+15:02:38,663 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstTitleL' (KacstTitleL.ttf) normal normal 400 normal>) = 10.05
+15:02:38,663 matplotlib.font_manager DEBUG findfont: score(<Font 'Purisa' (Purisa-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,664 matplotlib.font_manager DEBUG findfont: score(<Font 'Samyak Tamil' (Samyak-Tamil.ttf) normal normal 400 normal>) = 10.05
+15:02:38,664 matplotlib.font_manager DEBUG findfont: score(<Font 'Garuda' (Garuda-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,664 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstLetter' (KacstLetter.ttf) normal normal 400 normal>) = 10.05
+15:02:38,664 matplotlib.font_manager DEBUG findfont: score(<Font 'Vemana2000' (vemana2000.ttf) normal normal 400 normal>) = 10.05
+15:02:38,664 matplotlib.font_manager DEBUG findfont: score(<Font 'Abyssinica SIL' (AbyssinicaSIL-R.ttf) normal normal 400 normal>) = 10.05
+15:02:38,665 matplotlib.font_manager DEBUG findfont: score(<Font 'Waree' (Waree-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,665 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Serif' (LiberationSerif-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,665 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-B.ttf) normal normal bold normal>) = 10.335
+15:02:38,665 matplotlib.font_manager DEBUG findfont: score(<Font 'OpenSymbol' (opens___.ttf) normal normal 400 normal>) = 10.05
+15:02:38,665 matplotlib.font_manager DEBUG findfont: score(<Font 'Sawasdee' (Sawasdee-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,665 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Mono' (LiberationMono-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,666 matplotlib.font_manager DEBUG findfont: score(<Font 'Loma' (Loma-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,666 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-LightOblique.ttf) oblique normal light normal>) = 11.24
+15:02:38,666 matplotlib.font_manager DEBUG findfont: score(<Font 'Mukti Narrow' (MuktiNarrowBold.ttf) normal normal 700 normal>) = 10.335
+15:02:38,666 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Serif CJK JP' (NotoSerifCJK-Bold.ttc) normal normal bold normal>) = 10.335
+15:02:38,666 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstPen' (KacstPen.ttf) normal normal 400 normal>) = 10.05
+15:02:38,666 matplotlib.font_manager DEBUG findfont: score(<Font 'Suruma' (Suruma.ttf) normal normal 400 normal>) = 10.05
+15:02:38,667 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Serif' (LiberationSerif-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,667 matplotlib.font_manager DEBUG findfont: score(<Font 'Dyuthi' (Dyuthi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,667 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Mono' (TlwgMono-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,667 matplotlib.font_manager DEBUG findfont: score(<Font 'Karumbi' (Karumbi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,667 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans' (LiberationSans-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,676 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Mono' (NotoMono-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,676 matplotlib.font_manager DEBUG findfont: score(<Font 'Ani' (ani.ttf) normal normal 400 normal>) = 10.05
+15:02:38,677 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,677 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans' (LiberationSans-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,677 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Telugu' (Lohit-Telugu.ttf) normal normal 400 normal>) = 10.05
+15:02:38,677 matplotlib.font_manager DEBUG findfont: score(<Font 'Chilanka' (Chilanka-Regular.ttf) normal normal regular normal>) = 10.05
+15:02:38,678 matplotlib.font_manager DEBUG findfont: score(<Font 'Laksaman' (Laksaman-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,678 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,678 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans' (LiberationSans-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,678 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Serif' (LiberationSerif-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,679 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Gujarati' (Lohit-Gujarati.ttf) normal normal 400 normal>) = 10.05
+15:02:38,679 matplotlib.font_manager DEBUG findfont: score(<Font 'Purisa' (Purisa.ttf) normal normal 400 normal>) = 10.05
+15:02:38,679 matplotlib.font_manager DEBUG findfont: score(<Font 'Mitra Mono' (mitra.ttf) normal normal 400 normal>) = 10.05
+15:02:38,679 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,680 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeMono' (FreeMono.ttf) normal normal 400 normal>) = 10.05
+15:02:38,680 matplotlib.font_manager DEBUG findfont: score(<Font 'Manjari' (Manjari-Regular.otf) normal normal regular normal>) = 10.05
+15:02:38,680 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Serif CJK JP' (NotoSerifCJK-Regular.ttc) normal normal 400 normal>) = 10.05
+15:02:38,680 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstNaskh' (KacstNaskh.ttf) normal normal 400 normal>) = 10.05
+15:02:38,680 matplotlib.font_manager DEBUG findfont: score(<Font 'ori1Uni' (utkal.ttf) normal normal medium normal>) = 10.145
+15:02:38,680 matplotlib.font_manager DEBUG findfont: score(<Font 'mry_KacstQurn' (mry_KacstQurn.ttf) normal normal 400 normal>) = 10.05
+15:02:38,681 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSerif' (FreeSerif.ttf) normal normal 400 normal>) = 10.05
+15:02:38,681 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeMono' (FreeMonoOblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,681 matplotlib.font_manager DEBUG findfont: score(<Font 'Padauk Book' (PadaukBook-Bold.ttf) normal normal book normal>) = 10.05
+15:02:38,681 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typo' (TlwgTypo-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,681 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Mono' (LiberationMono-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,681 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Mono' (TlwgMono.ttf) normal normal 400 normal>) = 10.05
+15:02:38,681 matplotlib.font_manager DEBUG findfont: score(<Font 'Laksaman' (Laksaman.ttf) normal normal 400 normal>) = 10.05
+15:02:38,682 matplotlib.font_manager DEBUG findfont: score(<Font 'RaghuMalayalam' (RaghuMalayalamSans-Regular.ttf) normal normal regular normal>) = 10.05
+15:02:38,682 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typo' (TlwgTypo.ttf) normal normal 400 normal>) = 10.05
+15:02:38,682 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,682 matplotlib.font_manager DEBUG findfont: score(<Font 'Sarai' (Sarai.ttf) normal normal 400 normal>) = 10.05
+15:02:38,682 matplotlib.font_manager DEBUG findfont: score(<Font 'Purisa' (Purisa-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,682 matplotlib.font_manager DEBUG findfont: score(<Font 'Gubbi' (Gubbi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,683 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,683 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-M.ttf) normal normal medium normal>) = 10.145
+15:02:38,683 matplotlib.font_manager DEBUG findfont: score(<Font 'Jamrul' (JamrulNormal.ttf) normal normal 400 normal>) = 10.05
+15:02:38,683 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Bold.ttf) normal normal bold condensed>) = 10.535
+15:02:38,683 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,683 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstArt' (KacstArt.ttf) normal normal 400 normal>) = 10.05
+15:02:38,684 matplotlib.font_manager DEBUG findfont: score(<Font 'Rachana' (Rachana-Regular.ttf) normal normal regular normal>) = 10.05
+15:02:38,684 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeMono' (FreeMonoBold.ttf) normal normal bold normal>) = 10.335
+15:02:38,684 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Odia' (Lohit-Odia.ttf) normal normal 400 normal>) = 10.05
+15:02:38,696 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari.ttf) normal normal 400 normal>) = 10.05
+15:02:38,696 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Tamil Classical' (Lohit-Tamil-Classical.ttf) normal normal 400 normal>) = 10.05
+15:02:38,696 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstDecorative' (KacstDecorative.ttf) normal normal 400 normal>) = 10.05
+15:02:38,696 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstScreen' (KacstScreen.ttf) normal normal 400 normal>) = 10.05
+15:02:38,696 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstQurn' (KacstQurn.ttf) normal normal 400 normal>) = 10.05
+15:02:38,696 matplotlib.font_manager DEBUG findfont: score(<Font 'Chandas' (chandas1-2.ttf) normal normal 400 normal>) = 10.05
+15:02:38,697 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstBook' (KacstBook.ttf) normal normal book normal>) = 10.05
+15:02:38,697 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,697 matplotlib.font_manager DEBUG findfont: score(<Font 'Rekha' (Rekha.ttf) normal normal 400 normal>) = 10.05
+15:02:38,697 matplotlib.font_manager DEBUG findfont: score(<Font 'Padauk' (Padauk-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,697 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSerif' (FreeSerifBoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,697 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typo' (TlwgTypo-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,698 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Mono' (LiberationMono-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,698 matplotlib.font_manager DEBUG findfont: score(<Font 'Nakula' (nakula.ttf) normal normal 400 normal>) = 10.05
+15:02:38,698 matplotlib.font_manager DEBUG findfont: score(<Font 'Navilu' (Navilu.ttf) normal normal 400 normal>) = 10.05
+15:02:38,698 matplotlib.font_manager DEBUG findfont: score(<Font 'Tibetan Machine Uni' (TibetanMachineUni.ttf) normal normal 400 normal>) = 10.05
+15:02:38,698 matplotlib.font_manager DEBUG findfont: score(<Font 'Laksaman' (Laksaman-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,698 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-LI.ttf) italic normal light normal>) = 11.24
+15:02:38,699 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,699 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Mono' (LiberationMono-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,699 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Tamil' (Lohit-Tamil.ttf) normal normal 400 normal>) = 10.05
+15:02:38,699 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Gurmukhi' (Lohit-Gurmukhi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,699 matplotlib.font_manager DEBUG findfont: score(<Font 'Loma' (Loma-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,699 matplotlib.font_manager DEBUG findfont: score(<Font 'padmaa' (padmaa.ttf) normal normal 400 normal>) = 10.05
+15:02:38,700 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstOffice' (KacstOffice.ttf) normal normal 400 normal>) = 10.05
+15:02:38,700 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Sans CJK JP' (NotoSansCJK-Regular.ttc) normal normal 400 normal>) = 10.05
+15:02:38,700 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typist' (TlwgTypist-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,700 matplotlib.font_manager DEBUG findfont: score(<Font 'Rachana' (Rachana-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,700 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-R.ttf) normal normal 400 normal>) = 10.05
+15:02:38,700 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,701 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSerif' (FreeSerifItalic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,701 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typist' (TlwgTypist-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,701 matplotlib.font_manager DEBUG findfont: score(<Font 'Pagul' (Pagul.ttf) normal normal 400 normal>) = 10.05
+15:02:38,701 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Sans CJK JP' (NotoSansCJK-Bold.ttc) normal normal bold normal>) = 10.335
+15:02:38,701 matplotlib.font_manager DEBUG findfont: score(<Font 'Phetsarath OT' (Phetsarath_OT.ttf) normal normal 400 normal>) = 10.05
+15:02:38,701 matplotlib.font_manager DEBUG findfont: score(<Font 'Sahadeva' (sahadeva.ttf) normal normal 400 normal>) = 10.05
+15:02:38,702 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-R.ttf) normal normal 400 normal>) = 10.05
+15:02:38,702 matplotlib.font_manager DEBUG findfont: score(<Font 'Pothana2000' (Pothana2000.ttf) normal normal 400 normal>) = 10.05
+15:02:38,702 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,702 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Mono' (TlwgMono-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,702 matplotlib.font_manager DEBUG findfont: score(<Font 'Waree' (Waree-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,703 matplotlib.font_manager DEBUG findfont: score(<Font 'LKLUG' (lklug.ttf) normal normal 400 normal>) = 10.05
+15:02:38,703 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSans' (FreeSansBold.ttf) normal normal bold normal>) = 10.335
+15:02:38,703 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Kannada' (Lohit-Kannada.ttf) normal normal 400 normal>) = 10.05
+15:02:38,703 matplotlib.font_manager DEBUG findfont: score(<Font 'Mukti Narrow' (MuktiNarrow.ttf) normal normal 400 normal>) = 10.05
+15:02:38,703 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-RI.ttf) italic normal 400 normal>) = 11.05
+15:02:38,704 matplotlib.font_manager DEBUG findfont: score(<Font 'Droid Sans Fallback' (DroidSansFallbackFull.ttf) normal normal 400 normal>) = 10.05
+15:02:38,704 matplotlib.font_manager DEBUG findfont: score(<Font 'Manjari' (Manjari-Bold.otf) normal normal bold normal>) = 10.335
+15:02:38,704 matplotlib.font_manager DEBUG findfont: score(<Font 'Garuda' (Garuda.ttf) normal normal 400 normal>) = 10.05
+15:02:38,704 matplotlib.font_manager DEBUG findfont: score(<Font 'Padauk' (Padauk-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,704 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter.ttf) normal normal 400 normal>) = 10.05
+15:02:38,705 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,705 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans' (LiberationSans-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,705 matplotlib.font_manager DEBUG findfont: score(<Font 'Uroob' (Uroob.ttf) normal normal 700 normal>) = 10.335
+15:02:38,705 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-MI.ttf) italic normal medium normal>) = 11.145
+15:02:38,705 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstDigital' (KacstDigital.ttf) normal normal 400 normal>) = 10.05
+15:02:38,705 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typist' (TlwgTypist.ttf) normal normal 400 normal>) = 10.05
+15:02:38,706 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstTitle' (KacstTitle.ttf) normal normal 400 normal>) = 10.05
+15:02:38,706 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,706 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Bengali' (Lohit-Bengali.ttf) normal normal 400 normal>) = 10.05
+15:02:38,706 matplotlib.font_manager DEBUG findfont: score(<Font 'Sawasdee' (Sawasdee-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,706 matplotlib.font_manager DEBUG findfont: score(<Font 'Garuda' (Garuda-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,707 matplotlib.font_manager DEBUG findfont: score(<Font 'Kalapi' (Kalapi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,707 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-BI.ttf) italic normal bold normal>) = 11.335
+15:02:38,707 matplotlib.font_manager DEBUG findfont: score(<Font 'Keraleeyam' (Keraleeyam.ttf) normal normal 700 normal>) = 10.335
+15:02:38,707 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,707 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush.ttf) normal normal 400 normal>) = 10.05
+15:02:38,716 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-BI.ttf) italic normal bold normal>) = 11.335
+15:02:38,716 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-BoldItalic.ttf) italic normal bold condensed>) = 11.535
+15:02:38,716 matplotlib.font_manager DEBUG findfont: score(<Font 'Padauk Book' (PadaukBook-Regular.ttf) normal normal book normal>) = 10.05
+15:02:38,717 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Devanagari' (Lohit-Devanagari.ttf) normal normal 400 normal>) = 10.05
+15:02:38,717 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typist' (TlwgTypist-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,717 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSans' (FreeSansOblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,717 matplotlib.font_manager DEBUG findfont: score(<Font 'Manjari' (Manjari-Thin.otf) normal normal 400 normal>) = 10.05
+15:02:38,717 matplotlib.font_manager DEBUG findfont: score(<Font 'Samyak Malayalam' (Samyak-Malayalam.ttf) normal normal 400 normal>) = 10.05
+15:02:38,717 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,718 matplotlib.font_manager DEBUG findfont: score(<Font 'Samanata' (samanata.ttf) normal normal 400 normal>) = 10.05
+15:02:38,718 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-RI.ttf) italic normal 400 normal>) = 11.05
+15:02:38,718 matplotlib.font_manager DEBUG findfont: score(<Font 'Likhan' (LikhanNormal.ttf) normal normal 400 normal>) = 10.05
+15:02:38,718 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Malayalam' (Lohit-Malayalam.ttf) normal normal 400 normal>) = 10.05
+15:02:38,718 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Italic.ttf) italic normal 400 condensed>) = 11.25
+15:02:38,718 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeMono' (FreeMonoBoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,719 matplotlib.font_manager DEBUG findfont: score(<Font 'Sawasdee' (Sawasdee.ttf) normal normal 400 normal>) = 10.05
+15:02:38,719 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typo' (TlwgTypo-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,719 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-L.ttf) normal normal light normal>) = 10.24
+15:02:38,719 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSans' (FreeSans.ttf) normal normal 400 normal>) = 10.05
+15:02:38,719 matplotlib.font_manager DEBUG findfont: score(<Font 'Waree' (Waree-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,719 matplotlib.font_manager DEBUG findfont: score(<Font 'Samyak Gujarati' (Samyak-Gujarati.ttf) normal normal 400 normal>) = 10.05
+15:02:38,720 matplotlib.font_manager DEBUG findfont: score(<Font 'AnjaliOldLipi' (AnjaliOldLipi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,720 matplotlib.font_manager DEBUG findfont: score(<Font 'Waree' (Waree.ttf) normal normal 400 normal>) = 10.05
+15:02:38,720 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-B.ttf) normal normal bold normal>) = 10.335
+15:02:38,720 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-Light.ttf) normal normal light normal>) = 10.24
+15:02:38,720 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstOne' (KacstOne.ttf) normal normal 400 normal>) = 10.05
+15:02:38,720 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSerif' (FreeSerifBold.ttf) normal normal bold normal>) = 10.335
+15:02:38,721 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,721 matplotlib.font_manager DEBUG findfont: score(<Font 'Purisa' (Purisa-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,721 matplotlib.font_manager DEBUG findfont: score(<Font 'padmaa' (padmaa-Medium-0.5.ttf) normal normal normal normal>) = 10.0
+15:02:38,721 matplotlib.font_manager DEBUG findfont: score(<Font 'aakar' (aakar-medium.ttf) normal normal 400 normal>) = 10.05
+15:02:38,721 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstPoster' (KacstPoster.ttf) normal normal 400 normal>) = 10.05
+15:02:38,721 matplotlib.font_manager DEBUG findfont: score(<Font 'Garuda' (Garuda-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,722 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Regular.ttf) normal normal 400 condensed>) = 10.25
+15:02:38,722 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,722 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSans' (FreeSansBoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,722 matplotlib.font_manager DEBUG findfont: score(<Font 'Khmer OS System' (KhmerOSsys.ttf) normal normal 400 normal>) = 10.05
+15:02:38,722 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Condensed' (Ubuntu-C.ttf) normal normal 400 condensed>) = 10.25
+15:02:38,722 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstFarsi' (KacstFarsi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,723 matplotlib.font_manager DEBUG findfont: score(<Font 'Loma' (Loma.ttf) normal normal 400 normal>) = 10.05
+15:02:38,723 matplotlib.font_manager DEBUG findfont: score(<Font 'Sawasdee' (Sawasdee-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,723 matplotlib.font_manager DEBUG findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('/home/catarina/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
+15:02:38,922 matplotlib.font_manager DEBUG findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0.
+15:02:38,929 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXGeneral' (STIXGeneralItalic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,929 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeOneSym' (STIXSizOneSymBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,929 matplotlib.font_manager DEBUG findfont: score(<Font 'cmb10' (cmb10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,930 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,930 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono.ttf) normal normal 400 normal>) = 10.05
+15:02:38,930 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans' (DejaVuSans-BoldOblique.ttf) oblique normal bold normal>) = 1.335
+15:02:38,930 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,930 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeThreeSym' (STIXSizThreeSymBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,930 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Oblique.ttf) oblique normal 400 normal>) = 1.05
+15:02:38,931 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXGeneral' (STIXGeneralBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,931 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeFourSym' (STIXSizFourSymBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,931 matplotlib.font_manager DEBUG findfont: score(<Font 'cmr10' (cmr10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,931 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,931 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeTwoSym' (STIXSizTwoSymBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,932 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,932 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Bold.ttf) normal normal bold normal>) = 0.33499999999999996
+15:02:38,932 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeFiveSym' (STIXSizFiveSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,932 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Display' (DejaVuSansDisplay.ttf) normal normal 400 normal>) = 10.05
+15:02:38,933 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeOneSym' (STIXSizOneSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,933 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,933 matplotlib.font_manager DEBUG findfont: score(<Font 'cmtt10' (cmtt10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,933 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXNonUnicode' (STIXNonUniBol.ttf) normal normal bold normal>) = 10.335
+15:02:38,933 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif Display' (DejaVuSerifDisplay.ttf) normal normal 400 normal>) = 10.05
+15:02:38,934 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeTwoSym' (STIXSizTwoSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,939 matplotlib.font_manager DEBUG findfont: score(<Font 'cmsy10' (cmsy10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,939 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeFourSym' (STIXSizFourSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,940 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXNonUnicode' (STIXNonUniBolIta.ttf) italic normal bold normal>) = 11.335
+15:02:38,940 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXNonUnicode' (STIXNonUniIta.ttf) italic normal 400 normal>) = 11.05
+15:02:38,940 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXSizeThreeSym' (STIXSizThreeSymReg.ttf) normal normal regular normal>) = 10.05
+15:02:38,940 matplotlib.font_manager DEBUG findfont: score(<Font 'cmex10' (cmex10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,940 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,941 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Serif' (DejaVuSerif.ttf) normal normal 400 normal>) = 10.05
+15:02:38,941 matplotlib.font_manager DEBUG findfont: score(<Font 'cmss10' (cmss10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,941 matplotlib.font_manager DEBUG findfont: score(<Font 'DejaVu Sans' (DejaVuSans.ttf) normal normal 400 normal>) = 0.05
+15:02:38,941 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXGeneral' (STIXGeneral.ttf) normal normal regular normal>) = 10.05
+15:02:38,941 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXNonUnicode' (STIXNonUni.ttf) normal normal regular normal>) = 10.05
+15:02:38,942 matplotlib.font_manager DEBUG findfont: score(<Font 'cmmi10' (cmmi10.ttf) normal normal 400 normal>) = 10.05
+15:02:38,942 matplotlib.font_manager DEBUG findfont: score(<Font 'STIXGeneral' (STIXGeneralBolIta.ttf) italic normal bold normal>) = 11.335
+15:02:38,942 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Mono' (TlwgMono-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,942 matplotlib.font_manager DEBUG findfont: score(<Font 'Samyak Devanagari' (Samyak-Devanagari.ttf) normal normal 400 normal>) = 10.05
+15:02:38,942 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,943 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstOne' (KacstOne-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,943 matplotlib.font_manager DEBUG findfont: score(<Font 'Khmer OS' (KhmerOS.ttf) normal normal 400 normal>) = 10.05
+15:02:38,943 matplotlib.font_manager DEBUG findfont: score(<Font 'Meera' (Meera.ttf) normal normal 400 normal>) = 10.05
+15:02:38,943 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Serif' (LiberationSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,944 matplotlib.font_manager DEBUG findfont: score(<Font 'padmaa-Bold.1.1' (padmaa-Bold.1.1.ttf) normal normal bold normal>) = 10.335
+15:02:38,944 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Assamese' (Lohit-Assamese.ttf) normal normal 400 normal>) = 10.05
+15:02:38,944 matplotlib.font_manager DEBUG findfont: score(<Font 'Gargi' (Gargi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,944 matplotlib.font_manager DEBUG findfont: score(<Font 'Saab' (Saab.ttf) normal normal 400 normal>) = 10.05
+15:02:38,951 matplotlib.font_manager DEBUG findfont: score(<Font 'Loma' (Loma-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,951 matplotlib.font_manager DEBUG findfont: score(<Font 'Laksaman' (Laksaman-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,951 matplotlib.font_manager DEBUG findfont: score(<Font 'Kalimati' (kalimati.ttf) normal normal 400 normal>) = 10.05
+15:02:38,951 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstTitleL' (KacstTitleL.ttf) normal normal 400 normal>) = 10.05
+15:02:38,952 matplotlib.font_manager DEBUG findfont: score(<Font 'Purisa' (Purisa-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,952 matplotlib.font_manager DEBUG findfont: score(<Font 'Samyak Tamil' (Samyak-Tamil.ttf) normal normal 400 normal>) = 10.05
+15:02:38,952 matplotlib.font_manager DEBUG findfont: score(<Font 'Garuda' (Garuda-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,952 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstLetter' (KacstLetter.ttf) normal normal 400 normal>) = 10.05
+15:02:38,952 matplotlib.font_manager DEBUG findfont: score(<Font 'Vemana2000' (vemana2000.ttf) normal normal 400 normal>) = 10.05
+15:02:38,953 matplotlib.font_manager DEBUG findfont: score(<Font 'Abyssinica SIL' (AbyssinicaSIL-R.ttf) normal normal 400 normal>) = 10.05
+15:02:38,953 matplotlib.font_manager DEBUG findfont: score(<Font 'Waree' (Waree-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,953 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Serif' (LiberationSerif-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,953 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-B.ttf) normal normal bold normal>) = 10.335
+15:02:38,953 matplotlib.font_manager DEBUG findfont: score(<Font 'OpenSymbol' (opens___.ttf) normal normal 400 normal>) = 10.05
+15:02:38,954 matplotlib.font_manager DEBUG findfont: score(<Font 'Sawasdee' (Sawasdee-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,954 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Mono' (LiberationMono-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,954 matplotlib.font_manager DEBUG findfont: score(<Font 'Loma' (Loma-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,954 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-LightOblique.ttf) oblique normal light normal>) = 11.24
+15:02:38,954 matplotlib.font_manager DEBUG findfont: score(<Font 'Mukti Narrow' (MuktiNarrowBold.ttf) normal normal 700 normal>) = 10.335
+15:02:38,955 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Serif CJK JP' (NotoSerifCJK-Bold.ttc) normal normal bold normal>) = 10.335
+15:02:38,955 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstPen' (KacstPen.ttf) normal normal 400 normal>) = 10.05
+15:02:38,955 matplotlib.font_manager DEBUG findfont: score(<Font 'Suruma' (Suruma.ttf) normal normal 400 normal>) = 10.05
+15:02:38,955 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Serif' (LiberationSerif-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,961 matplotlib.font_manager DEBUG findfont: score(<Font 'Dyuthi' (Dyuthi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,961 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Mono' (TlwgMono-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,962 matplotlib.font_manager DEBUG findfont: score(<Font 'Karumbi' (Karumbi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,962 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans' (LiberationSans-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,962 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Mono' (NotoMono-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,962 matplotlib.font_manager DEBUG findfont: score(<Font 'Ani' (ani.ttf) normal normal 400 normal>) = 10.05
+15:02:38,962 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,963 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans' (LiberationSans-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,963 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Telugu' (Lohit-Telugu.ttf) normal normal 400 normal>) = 10.05
+15:02:38,963 matplotlib.font_manager DEBUG findfont: score(<Font 'Chilanka' (Chilanka-Regular.ttf) normal normal regular normal>) = 10.05
+15:02:38,963 matplotlib.font_manager DEBUG findfont: score(<Font 'Laksaman' (Laksaman-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,963 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,964 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans' (LiberationSans-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,964 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Serif' (LiberationSerif-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,964 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Gujarati' (Lohit-Gujarati.ttf) normal normal 400 normal>) = 10.05
+15:02:38,964 matplotlib.font_manager DEBUG findfont: score(<Font 'Purisa' (Purisa.ttf) normal normal 400 normal>) = 10.05
+15:02:38,964 matplotlib.font_manager DEBUG findfont: score(<Font 'Mitra Mono' (mitra.ttf) normal normal 400 normal>) = 10.05
+15:02:38,965 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,965 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeMono' (FreeMono.ttf) normal normal 400 normal>) = 10.05
+15:02:38,965 matplotlib.font_manager DEBUG findfont: score(<Font 'Manjari' (Manjari-Regular.otf) normal normal regular normal>) = 10.05
+15:02:38,965 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Serif CJK JP' (NotoSerifCJK-Regular.ttc) normal normal 400 normal>) = 10.05
+15:02:38,965 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstNaskh' (KacstNaskh.ttf) normal normal 400 normal>) = 10.05
+15:02:38,966 matplotlib.font_manager DEBUG findfont: score(<Font 'ori1Uni' (utkal.ttf) normal normal medium normal>) = 10.145
+15:02:38,966 matplotlib.font_manager DEBUG findfont: score(<Font 'mry_KacstQurn' (mry_KacstQurn.ttf) normal normal 400 normal>) = 10.05
+15:02:38,966 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSerif' (FreeSerif.ttf) normal normal 400 normal>) = 10.05
+15:02:38,972 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeMono' (FreeMonoOblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,972 matplotlib.font_manager DEBUG findfont: score(<Font 'Padauk Book' (PadaukBook-Bold.ttf) normal normal book normal>) = 10.05
+15:02:38,973 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typo' (TlwgTypo-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,973 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Mono' (LiberationMono-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,973 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Mono' (TlwgMono.ttf) normal normal 400 normal>) = 10.05
+15:02:38,973 matplotlib.font_manager DEBUG findfont: score(<Font 'Laksaman' (Laksaman.ttf) normal normal 400 normal>) = 10.05
+15:02:38,974 matplotlib.font_manager DEBUG findfont: score(<Font 'RaghuMalayalam' (RaghuMalayalamSans-Regular.ttf) normal normal regular normal>) = 10.05
+15:02:38,974 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typo' (TlwgTypo.ttf) normal normal 400 normal>) = 10.05
+15:02:38,974 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,974 matplotlib.font_manager DEBUG findfont: score(<Font 'Sarai' (Sarai.ttf) normal normal 400 normal>) = 10.05
+15:02:38,974 matplotlib.font_manager DEBUG findfont: score(<Font 'Purisa' (Purisa-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,975 matplotlib.font_manager DEBUG findfont: score(<Font 'Gubbi' (Gubbi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,975 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,975 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-M.ttf) normal normal medium normal>) = 10.145
+15:02:38,975 matplotlib.font_manager DEBUG findfont: score(<Font 'Jamrul' (JamrulNormal.ttf) normal normal 400 normal>) = 10.05
+15:02:38,975 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Bold.ttf) normal normal bold condensed>) = 10.535
+15:02:38,976 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,976 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstArt' (KacstArt.ttf) normal normal 400 normal>) = 10.05
+15:02:38,976 matplotlib.font_manager DEBUG findfont: score(<Font 'Rachana' (Rachana-Regular.ttf) normal normal regular normal>) = 10.05
+15:02:38,976 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeMono' (FreeMonoBold.ttf) normal normal bold normal>) = 10.335
+15:02:38,977 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Odia' (Lohit-Odia.ttf) normal normal 400 normal>) = 10.05
+15:02:38,977 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari.ttf) normal normal 400 normal>) = 10.05
+15:02:38,977 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Tamil Classical' (Lohit-Tamil-Classical.ttf) normal normal 400 normal>) = 10.05
+15:02:38,977 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstDecorative' (KacstDecorative.ttf) normal normal 400 normal>) = 10.05
+15:02:38,977 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstScreen' (KacstScreen.ttf) normal normal 400 normal>) = 10.05
+15:02:38,983 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstQurn' (KacstQurn.ttf) normal normal 400 normal>) = 10.05
+15:02:38,983 matplotlib.font_manager DEBUG findfont: score(<Font 'Chandas' (chandas1-2.ttf) normal normal 400 normal>) = 10.05
+15:02:38,984 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstBook' (KacstBook.ttf) normal normal book normal>) = 10.05
+15:02:38,984 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,984 matplotlib.font_manager DEBUG findfont: score(<Font 'Rekha' (Rekha.ttf) normal normal 400 normal>) = 10.05
+15:02:38,984 matplotlib.font_manager DEBUG findfont: score(<Font 'Padauk' (Padauk-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,984 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSerif' (FreeSerifBoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,985 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typo' (TlwgTypo-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,985 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Mono' (LiberationMono-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,985 matplotlib.font_manager DEBUG findfont: score(<Font 'Nakula' (nakula.ttf) normal normal 400 normal>) = 10.05
+15:02:38,985 matplotlib.font_manager DEBUG findfont: score(<Font 'Navilu' (Navilu.ttf) normal normal 400 normal>) = 10.05
+15:02:38,985 matplotlib.font_manager DEBUG findfont: score(<Font 'Tibetan Machine Uni' (TibetanMachineUni.ttf) normal normal 400 normal>) = 10.05
+15:02:38,985 matplotlib.font_manager DEBUG findfont: score(<Font 'Laksaman' (Laksaman-BoldItalic.ttf) italic normal bold normal>) = 11.335
+15:02:38,986 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-LI.ttf) italic normal light normal>) = 11.24
+15:02:38,986 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-Italic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,986 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Mono' (LiberationMono-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,986 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Tamil' (Lohit-Tamil.ttf) normal normal 400 normal>) = 10.05
+15:02:38,986 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Gurmukhi' (Lohit-Gurmukhi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,987 matplotlib.font_manager DEBUG findfont: score(<Font 'Loma' (Loma-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,987 matplotlib.font_manager DEBUG findfont: score(<Font 'padmaa' (padmaa.ttf) normal normal 400 normal>) = 10.05
+15:02:38,987 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstOffice' (KacstOffice.ttf) normal normal 400 normal>) = 10.05
+15:02:38,987 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Sans CJK JP' (NotoSansCJK-Regular.ttc) normal normal 400 normal>) = 10.05
+15:02:38,988 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typist' (TlwgTypist-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,988 matplotlib.font_manager DEBUG findfont: score(<Font 'Rachana' (Rachana-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,988 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-R.ttf) normal normal 400 normal>) = 10.05
+15:02:38,988 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi.ttf) normal normal 400 normal>) = 10.05
+15:02:38,988 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSerif' (FreeSerifItalic.ttf) italic normal 400 normal>) = 11.05
+15:02:38,989 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typist' (TlwgTypist-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,995 matplotlib.font_manager DEBUG findfont: score(<Font 'Pagul' (Pagul.ttf) normal normal 400 normal>) = 10.05
+15:02:38,995 matplotlib.font_manager DEBUG findfont: score(<Font 'Noto Sans CJK JP' (NotoSansCJK-Bold.ttc) normal normal bold normal>) = 10.335
+15:02:38,995 matplotlib.font_manager DEBUG findfont: score(<Font 'Phetsarath OT' (Phetsarath_OT.ttf) normal normal 400 normal>) = 10.05
+15:02:38,995 matplotlib.font_manager DEBUG findfont: score(<Font 'Sahadeva' (sahadeva.ttf) normal normal 400 normal>) = 10.05
+15:02:38,995 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-R.ttf) normal normal 400 normal>) = 10.05
+15:02:38,996 matplotlib.font_manager DEBUG findfont: score(<Font 'Pothana2000' (Pothana2000.ttf) normal normal 400 normal>) = 10.05
+15:02:38,996 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,996 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Mono' (TlwgMono-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:38,996 matplotlib.font_manager DEBUG findfont: score(<Font 'Waree' (Waree-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:38,996 matplotlib.font_manager DEBUG findfont: score(<Font 'LKLUG' (lklug.ttf) normal normal 400 normal>) = 10.05
+15:02:38,997 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSans' (FreeSansBold.ttf) normal normal bold normal>) = 10.335
+15:02:38,997 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Kannada' (Lohit-Kannada.ttf) normal normal 400 normal>) = 10.05
+15:02:38,997 matplotlib.font_manager DEBUG findfont: score(<Font 'Mukti Narrow' (MuktiNarrow.ttf) normal normal 400 normal>) = 10.05
+15:02:38,997 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-RI.ttf) italic normal 400 normal>) = 11.05
+15:02:38,997 matplotlib.font_manager DEBUG findfont: score(<Font 'Droid Sans Fallback' (DroidSansFallbackFull.ttf) normal normal 400 normal>) = 10.05
+15:02:38,998 matplotlib.font_manager DEBUG findfont: score(<Font 'Manjari' (Manjari-Bold.otf) normal normal bold normal>) = 10.335
+15:02:38,998 matplotlib.font_manager DEBUG findfont: score(<Font 'Garuda' (Garuda.ttf) normal normal 400 normal>) = 10.05
+15:02:38,998 matplotlib.font_manager DEBUG findfont: score(<Font 'Padauk' (Padauk-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,998 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter.ttf) normal normal 400 normal>) = 10.05
+15:02:38,998 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:38,999 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans' (LiberationSans-Regular.ttf) normal normal 400 normal>) = 10.05
+15:02:38,999 matplotlib.font_manager DEBUG findfont: score(<Font 'Uroob' (Uroob.ttf) normal normal 700 normal>) = 10.335
+15:02:38,999 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-MI.ttf) italic normal medium normal>) = 11.145
+15:02:38,999 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstDigital' (KacstDigital.ttf) normal normal 400 normal>) = 10.05
+15:02:38,999 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typist' (TlwgTypist.ttf) normal normal 400 normal>) = 10.05
+15:02:38,999 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstTitle' (KacstTitle.ttf) normal normal 400 normal>) = 10.05
+15:02:39,0 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:39,0 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Bengali' (Lohit-Bengali.ttf) normal normal 400 normal>) = 10.05
+15:02:39,2 matplotlib.font_manager DEBUG findfont: score(<Font 'Sawasdee' (Sawasdee-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:39,2 matplotlib.font_manager DEBUG findfont: score(<Font 'Garuda' (Garuda-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:39,2 matplotlib.font_manager DEBUG findfont: score(<Font 'Kalapi' (Kalapi.ttf) normal normal 400 normal>) = 10.05
+15:02:39,2 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-BI.ttf) italic normal bold normal>) = 11.335
+15:02:39,2 matplotlib.font_manager DEBUG findfont: score(<Font 'Keraleeyam' (Keraleeyam.ttf) normal normal 700 normal>) = 10.335
+15:02:39,2 matplotlib.font_manager DEBUG findfont: score(<Font 'Kinnari' (Kinnari-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:39,2 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush.ttf) normal normal 400 normal>) = 10.05
+15:02:39,3 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-BI.ttf) italic normal bold normal>) = 11.335
+15:02:39,3 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-BoldItalic.ttf) italic normal bold condensed>) = 11.535
+15:02:39,3 matplotlib.font_manager DEBUG findfont: score(<Font 'Padauk Book' (PadaukBook-Regular.ttf) normal normal book normal>) = 10.05
+15:02:39,3 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Devanagari' (Lohit-Devanagari.ttf) normal normal 400 normal>) = 10.05
+15:02:39,3 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typist' (TlwgTypist-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:39,4 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSans' (FreeSansOblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:39,4 matplotlib.font_manager DEBUG findfont: score(<Font 'Manjari' (Manjari-Thin.otf) normal normal 400 normal>) = 10.05
+15:02:39,4 matplotlib.font_manager DEBUG findfont: score(<Font 'Samyak Malayalam' (Samyak-Malayalam.ttf) normal normal 400 normal>) = 10.05
+15:02:39,4 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:39,4 matplotlib.font_manager DEBUG findfont: score(<Font 'Samanata' (samanata.ttf) normal normal 400 normal>) = 10.05
+15:02:39,4 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-RI.ttf) italic normal 400 normal>) = 11.05
+15:02:39,5 matplotlib.font_manager DEBUG findfont: score(<Font 'Likhan' (LikhanNormal.ttf) normal normal 400 normal>) = 10.05
+15:02:39,5 matplotlib.font_manager DEBUG findfont: score(<Font 'Lohit Malayalam' (Lohit-Malayalam.ttf) normal normal 400 normal>) = 10.05
+15:02:39,5 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Italic.ttf) italic normal 400 condensed>) = 11.25
+15:02:39,5 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeMono' (FreeMonoBoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:39,11 matplotlib.font_manager DEBUG findfont: score(<Font 'Sawasdee' (Sawasdee.ttf) normal normal 400 normal>) = 10.05
+15:02:39,11 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typo' (TlwgTypo-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:39,11 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu' (Ubuntu-L.ttf) normal normal light normal>) = 10.24
+15:02:39,12 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSans' (FreeSans.ttf) normal normal 400 normal>) = 10.05
+15:02:39,12 matplotlib.font_manager DEBUG findfont: score(<Font 'Waree' (Waree-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:39,12 matplotlib.font_manager DEBUG findfont: score(<Font 'Samyak Gujarati' (Samyak-Gujarati.ttf) normal normal 400 normal>) = 10.05
+15:02:39,12 matplotlib.font_manager DEBUG findfont: score(<Font 'AnjaliOldLipi' (AnjaliOldLipi.ttf) normal normal 400 normal>) = 10.05
+15:02:39,13 matplotlib.font_manager DEBUG findfont: score(<Font 'Waree' (Waree.ttf) normal normal 400 normal>) = 10.05
+15:02:39,13 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-B.ttf) normal normal bold normal>) = 10.335
+15:02:39,13 matplotlib.font_manager DEBUG findfont: score(<Font 'Umpush' (Umpush-Light.ttf) normal normal light normal>) = 10.24
+15:02:39,13 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstOne' (KacstOne.ttf) normal normal 400 normal>) = 10.05
+15:02:39,13 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSerif' (FreeSerifBold.ttf) normal normal bold normal>) = 10.335
+15:02:39,14 matplotlib.font_manager DEBUG findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:39,14 matplotlib.font_manager DEBUG findfont: score(<Font 'Purisa' (Purisa-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:39,14 matplotlib.font_manager DEBUG findfont: score(<Font 'padmaa' (padmaa-Medium-0.5.ttf) normal normal normal normal>) = 10.0
+15:02:39,14 matplotlib.font_manager DEBUG findfont: score(<Font 'aakar' (aakar-medium.ttf) normal normal 400 normal>) = 10.05
+15:02:39,14 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstPoster' (KacstPoster.ttf) normal normal 400 normal>) = 10.05
+15:02:39,14 matplotlib.font_manager DEBUG findfont: score(<Font 'Garuda' (Garuda-Bold.ttf) normal normal bold normal>) = 10.335
+15:02:39,15 matplotlib.font_manager DEBUG findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Regular.ttf) normal normal 400 condensed>) = 10.25
+15:02:39,15 matplotlib.font_manager DEBUG findfont: score(<Font 'Norasi' (Norasi-Oblique.ttf) oblique normal 400 normal>) = 11.05
+15:02:39,15 matplotlib.font_manager DEBUG findfont: score(<Font 'FreeSans' (FreeSansBoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:39,15 matplotlib.font_manager DEBUG findfont: score(<Font 'Khmer OS System' (KhmerOSsys.ttf) normal normal 400 normal>) = 10.05
+15:02:39,15 matplotlib.font_manager DEBUG findfont: score(<Font 'Ubuntu Condensed' (Ubuntu-C.ttf) normal normal 400 condensed>) = 10.25
+15:02:39,16 matplotlib.font_manager DEBUG findfont: score(<Font 'KacstFarsi' (KacstFarsi.ttf) normal normal 400 normal>) = 10.05
+15:02:39,16 matplotlib.font_manager DEBUG findfont: score(<Font 'Loma' (Loma.ttf) normal normal 400 normal>) = 10.05
+15:02:39,21 matplotlib.font_manager DEBUG findfont: score(<Font 'Sawasdee' (Sawasdee-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+15:02:39,22 matplotlib.font_manager DEBUG findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('/home/catarina/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
+15:02:39,787 matplotlib.backends.backend_pdf DEBUG Assigning font /b'F1' = '/home/catarina/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf'
+15:02:40,94 matplotlib.backends.backend_pdf DEBUG Embedding font /home/catarina/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf.
+15:02:40,94 matplotlib.backends.backend_pdf DEBUG Writing TrueType font.
+21:46:00,828 root INFO RIPPE
+21:46:07,355 root INFO file name: saved/gp_fixed_ylego.bz2
+21:46:12,844 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:13:36,320 root INFO RIPPE
+23:13:41,929 root INFO file name: saved/gp_fixed_ylego.bz2
+23:13:43,605 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:16:34,544 root INFO RIPPE
+23:16:39,80 root INFO file name: saved/gp_fixed_ylego.bz2
+23:16:40,388 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:18:24,65 root INFO RIPPE
+23:18:28,419 root INFO file name: saved/gp_fixed_ylego.bz2
+23:18:29,840 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:19:00,989 root INFO RIPPE
+23:19:04,892 root INFO file name: saved/gp_fixed_ylego.bz2
+23:19:06,240 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:19:21,387 root INFO RIPPE
+23:19:25,524 root INFO file name: saved/gp_fixed_ylego.bz2
+23:19:27,27 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:20:04,259 root INFO RIPPE
+23:20:11,766 root INFO file name: saved/gp_fixed_ylego.bz2
+23:20:13,408 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:33:48,348 root INFO RIPPE
+23:33:52,426 root INFO file name: saved/gp_fixed_ylego.bz2
+23:33:53,785 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:49:40,324 root INFO RIPPE
+23:49:44,264 root INFO file name: saved/gp_fixed_bball.bz2
+23:49:46,792 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:51:26,708 root INFO RIPPE
+23:51:30,519 root INFO file name: saved/gp_fixed_ylego.bz2
+23:51:31,829 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:53:29,670 root INFO RIPPE
+23:53:33,446 root INFO file name: saved/gp_fixed_bball.bz2
+23:53:35,913 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:57:22,616 root INFO RIPPE
+23:57:26,424 root INFO file name: saved/gp_fixed_bball.bz2
+23:57:28,892 numexpr.utils INFO NumExpr defaulting to 2 threads.
+23:58:37,400 root INFO RIPPE
+23:58:42,464 root INFO file name: saved/gp_fixed_bball.bz2
+23:58:44,660 numexpr.utils INFO NumExpr defaulting to 2 threads.
+                                                                                                                                                        09:29:04,54 root INFO RIPPE
+09:29:09,213 root INFO file name: saved/gp_fixed_sphere.bz2
+13:16:53,922 root INFO RIPPE
+13:17:01,163 root INFO file name: saved/gp_fixed_bball.bz2
+13:17:04,30 numexpr.utils INFO NumExpr defaulting to 2 threads.
+13:56:22,140 root INFO RIPPE
+13:56:26,849 root INFO file name: saved/gp_fixed_ylego.bz2
+14:02:35,281 root INFO RIPPE
+14:02:39,362 root INFO file name: saved/gp_fixed_bball.bz2
+14:02:41,466 numexpr.utils INFO NumExpr defaulting to 2 threads.
+14:09:43,925 root INFO RIPPE
+14:09:48,175 root INFO file name: saved/gp_fixed_bball.bz2
+14:09:51,305 numexpr.utils INFO NumExpr defaulting to 2 threads.
+14:16:30,282 root INFO RIPPE
+14:16:35,100 root INFO file name: saved/gp_fixed_bball.bz2
+14:16:36,3 numexpr.utils INFO NumExpr defaulting to 2 threads.
+14:31:09,392 root INFO RIPPE
+14:31:17,18 root INFO file name: saved/gp_fixed_bball.bz2
+14:31:18,30 numexpr.utils INFO NumExpr defaulting to 2 threads.
+14:33:03,587 root INFO RIPPE
+14:33:07,556 root INFO file name: saved/gp_fixed_bball.bz2
+14:33:21,984 root INFO RIPPE
+14:33:26,736 root INFO file name: saved/gp_fixed_bball.bz2
+14:33:40,388 root INFO RIPPE
+14:33:45,163 root INFO file name: saved/gp_fixed_bball.bz2
+14:33:59,224 root INFO RIPPE
+14:34:03,619 root INFO file name: saved/gp_fixed_bball.bz2
+14:34:19,550 root INFO RIPPE
+14:34:24,259 root INFO file name: saved/gp_fixed_bball.bz2
+14:34:40,142 root INFO RIPPE
+14:34:44,376 root INFO file name: saved/gp_fixed_bball.bz2
+14:34:45,319 numexpr.utils INFO NumExpr defaulting to 2 threads.
+15:15:32,451 root INFO RIPPE
+15:15:45,796 root INFO file name: saved/gp_fixed_bball.bz2
+15:15:48,959 numexpr.utils INFO NumExpr defaulting to 2 threads.
+15:26:24,501 root INFO RIPPE
+15:26:30,137 root INFO file name: saved/gp_fixed_bball.bz2
+15:26:31,63 numexpr.utils INFO NumExpr defaulting to 2 threads.
+15:34:32,497 root INFO RIPPE
+15:34:41,413 root INFO file name: saved/gp_fixed_bball.bz2
+15:34:43,466 numexpr.utils INFO NumExpr defaulting to 3 threads.
+15:45:13,793 root INFO RIPPE
+                             15:58:32,786 root INFO RIPPE
+15:58:50,703 root INFO file name: saved/gp_fixed_bball.bz2
+15:58:53,352 numexpr.utils INFO NumExpr defaulting to 2 threads.
