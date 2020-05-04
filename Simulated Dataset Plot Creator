@@ -1,0 +1,28 @@
+from matplotlib import pyplot as plt
+import pylab
+
+
+def plotcreator(object_name="bball", tools=("rake", "stick", "hook"), actions=("tap_from_left", "push", "draw", "tap_from_right")):
+    for tool_name in tools:
+        for action_name in actions:
+            f = open("simulated-dataset/{}/{}/{}/effData.txt".format(tool_name, object_name, action_name), "r")
+            x = []
+            y = []
+            for line in f.readlines():
+                x.append(float(line.split()[7]))
+                y.append(float(line.split()[8]))
+
+            plt.scatter(x, y, s=40, c="red", edgecolors='none', label="final positions")
+            plt.legend(loc=2)
+            plt.ylim(-0.3, 0.3)
+            plt.xlim(-0.3, 0.3)
+            plt.title('action: {}, tool: {}'.format(action_name, tool_name))
+            plt.xlabel('[m]')
+            plt.ylabel('[m]')
+            plt.savefig("simulated-dataset/{}/{}/{}/{}.png".format(tool_name, object_name, action_name, tool_name+"_"+object_name+"_"+action_name))
+            plt.savefig("simulated-dataset/{}/{}/{}/{}.pdf".format(tool_name, object_name, action_name, tool_name+"_"+object_name+"_"+action_name))
+            plt.show()
+
+if __name__ == "__main__":
+    plotcreator()
+    print("Finished")
