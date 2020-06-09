@@ -2,17 +2,17 @@ from matplotlib import pyplot as plt
 import pylab
 
 
-def plotcreator(object_name="bball", tools=("rake", "stick", "hook"), actions=("tap_from_left", "push", "draw", "tap_from_right")):
+def plotcreator(object_name="ylego", tools=("rake", "stick", "hook"), actions=("tap_from_left", "push", "draw", "tap_from_right")):
     for tool_name in tools:
         for action_name in actions:
-            f = open("simulated-dataset/{}/{}/{}/effData.txt".format(tool_name, object_name, action_name), "r")
+            f = open("affordance-datasets/visual-affordances-of-objects-and-tools/{}/{}/{}/effData.txt".format(tool_name, object_name, action_name), "r")
             x = []
             y = []
             for line in f.readlines():
-                x.append(float(line.split()[7]))
-                y.append(float(line.split()[8]))
+                x.append(-float(line.split()[7])+float(line.split()[3]))
+                y.append(float(line.split()[8])-float(line.split()[4]))
 
-            plt.scatter(x, y, s=40, c="red", edgecolors='none', label="final positions")
+            plt.scatter(y, x, s=40, c="red", edgecolors='none', label="final relative positions")
             plt.legend(loc=2)
             plt.ylim(-0.3, 0.3)
             plt.xlim(-0.3, 0.3)
@@ -23,6 +23,253 @@ def plotcreator(object_name="bball", tools=("rake", "stick", "hook"), actions=("
             plt.savefig("simulated-dataset/{}/{}/{}/{}.pdf".format(tool_name, object_name, action_name, tool_name+"_"+object_name+"_"+action_name))
             plt.show()
 
+def OriginalDatasetPlots():
+    def lateralFriction_plot():
+        lateralFriction = [0.28061109132003315, 1.5293000781387358, 0.9298764184258806, 1.154857670865772, 4.562516010170595,
+                             0.6148787846359659, 4.7557960472420895, 4.13912044921352, 4.020440843962487, 2.0103739387107895,
+                             2.8221724656178253, 4.5768841696730815]
+
+        cost = [ 16.56, 4.64, 13.41, 9.85, 0.72, 19.88, 1.51, 1.16, 2.84, 2.58, 1.41, 1.29]
+
+        plt.scatter(cost, lateralFriction, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 4.32, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 8)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Lateral Friction')
+        plt.title('Lateral Friction')
+        plt.savefig("plots/lateralFriction.png")
+        plt.show()
+
+
+    def rollingFriction_plot():
+        rollingFriction = [0.0005842103008368493, 0.0006456152416792205, 0.0005583257897111816, 0.0005205187503639446,
+                           0.0005142400033254215, 0.000964077254793892, 0.0004614909651096057, 0.0008538135634639624,
+                           0.0005416104148724082,
+                           0.00046248854342516006, 0.001, 0.001]
+        cost = [16.56, 4.64, 13.41, 9.85, 0.72, 19.88, 1.51, 1.16, 2.84, 2.58, 1.41, 1.29]
+
+        plt.scatter(cost, rollingFriction, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 0.00, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.01)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Rolling Friction')
+        plt.title('Rolling Friction')
+        plt.savefig("plots/rollingFriction.png")
+        plt.show()
+
+
+    def mass_plot():
+        mass = [4.830965719604757, 8.053175850564578, 5.337697357755874, 9.716205665451085, 2.005234908557921,
+                7.9574799271504855, 8.405644993272867, 2.304135160588951, 7.414648245544185, 4.49357191520549, 0.0001, 0.0001]
+        cost = [16.56, 4.64, 13.41, 9.85, 0.72, 19.88, 1.51, 1.16, 2.84, 2.58, 1.41, 1.29]
+
+        plt.scatter(cost, mass, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 0.19, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 12)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Mass')
+        plt.title('Mass')
+        plt.savefig("plots/mass.png")
+        plt.show()
+
+    return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
+
+def Dataset2Plots():
+    def lateralFriction_plot():
+        f = open("plots/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[0]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 4.32, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 8)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Lateral Friction')
+        plt.title('Lateral Friction')
+        plt.savefig("plots/lateralFriction2.png")
+        plt.show()
+
+
+    def rollingFriction_plot():
+        f = open("plots/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[2]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 0.00, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.2)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Rolling Friction')
+        plt.title('Rolling Friction')
+        plt.savefig("plots/rollingFriction2.png")
+        plt.show()
+
+
+    def mass_plot():
+        f = open("plots/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[1]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 0.19, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.2)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Mass')
+        plt.title('Mass')
+        plt.savefig("plots/mass2.png")
+        plt.show()
+
+    return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
+
+def Dataset3Plots():
+    def lateralFriction_plot():
+        f = open("plots/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[0]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 4.32, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 8)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Lateral Friction')
+        plt.title('Lateral Friction')
+        plt.savefig("plots/lateralFriction3.png")
+        plt.show()
+
+
+    def rollingFriction_plot():
+        f = open("plots/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[2]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 0.00, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.3)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Rolling Friction')
+        plt.title('Rolling Friction')
+        plt.savefig("plots/rollingFriction3.png")
+        plt.show()
+
+
+    def mass_plot():
+        f = open("plots/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[1]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 0.19, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.2)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Mass')
+        plt.title('Mass')
+        plt.savefig("plots/mass3.png")
+        plt.show()
+
+    return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
+
+def Dataset4Plots():
+    def lateralFriction_plot():
+        f = open("plots/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[0]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 4.32, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 8)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Lateral Friction')
+        plt.title('Lateral Friction')
+        plt.savefig("plots/lateralFriction4.png")
+        plt.show()
+
+
+    def rollingFriction_plot():
+        f = open("plots/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[2]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 0.00, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.2)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Rolling Friction')
+        plt.title('Rolling Friction')
+        plt.savefig("plots/rollingFriction4.png")
+        plt.show()
+
+
+    def mass_plot():
+        f = open("plots/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt", "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[1]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.scatter(0.67, 0.19, s=40, c="blue", edgecolors='none', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.2)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Mass')
+        plt.title('Mass')
+        plt.savefig("plots/mass4.png")
+        plt.show()
+
+    return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
+
 if __name__ == "__main__":
-    plotcreator()
+    #plotcreator()
+    OriginalDatasetPlots()
+    Dataset2Plots()
+    Dataset3Plots()
+    Dataset4Plots()
     print("Finished")

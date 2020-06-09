@@ -21,8 +21,8 @@ from continuous_kl import KL_from_distributions as KLD
 import logging
 import time
 
-N_EXPERIMENTS = 100  # running experiment per object per tool
-N_TRIALS = 50  # optimization steps
+N_EXPERIMENTS = 40  # running experiment per object per tool
+N_TRIALS = 20  # optimization steps
 PYBULLET_INSTANCE = p.GUI
 WATCHDOG = True
 PLOTTING = True
@@ -213,7 +213,7 @@ def cost(x, y):
     return (100 * (np.linalg.norm(x.mean(0) - y.mean(0)) + np.linalg.norm(x.var(0) - y.var(0)))) ** 2
 
 
-def gen_run_experiment(pbar, param_names, object_name="bball", tools=("rake", "stick", "hook"),
+def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "stick"), #, "hook"),
                        actions=("tap_from_left", "push", "draw", "tap_from_right"),
                        # actions=("tap_from_left", "tap_from_right"),
                        # actions=("tap_from_right",),
@@ -259,6 +259,9 @@ def gen_run_experiment(pbar, param_names, object_name="bball", tools=("rake", "s
                                                                                                               object_name,
                                                                                                               action_name),
                     get_eff_data=True)
+                #target_pos, target_var, gnd_weight, mdist, real_eff_history = load_experiment(
+                #    "simulated-dataset/{}/{}/{}/effData.txt".format(tool_name, object_name, action_name),
+                #    get_eff_data=True)
                 for iter in range(N_EXPERIMENTS):
                     success = False
                     while not success:
@@ -273,10 +276,13 @@ def gen_run_experiment(pbar, param_names, object_name="bball", tools=("rake", "s
 
                             nonlocal objID
                             if (toolID == objID):
+
                                 raise ValueError
 
                             mu = init_poses[tool_name][action_name]
-                            yaw, pitch, roll, x, y = np.random.normal(mu, np.array([1.0, 1.0, 1.0, 0.0, 0.0]))
+                            yaw, pitch, roll, x, y = np.random.uniform(np.array([-0.5, 0.0, 0.0, mu[3], mu[4]]),
+                                                                       np.array([0.5, 0.0, 0.0, mu[3], mu[4]]))
+                            #yaw, pitch, roll, x, y = np.random.normal(mu, np.array([1.0, 1.0, 1.0, 0.0, 0.0]))
                             initial_xy = np.array([x, y])
 
                             p.resetBasePositionAndOrientation(objID, posObj=[x, y, 0.05], ornObj=[yaw, pitch, roll, 1])
@@ -359,7 +365,7 @@ def gen_run_experiment(pbar, param_names, object_name="bball", tools=("rake", "s
                             success = True
 
 
-                            file = open("simulated-dataset/{}/{}/{}/effData.txt".format(tool_name, object_name,action_name), "a+")
+                            file = open("simulated-dataset/{}/{}/{}/effData4.txt".format(tool_name, object_name,action_name), "a+")
                             file.write(str(tool_name) + " " +str(object_name) + " " + str(actionId) + " " + str(initial_xy[0]) + " " + str(initial_xy[1]) +
                                        " " + str(-1) + " " + str(-1) + " " + str(pos[0]) + " " + str(pos[1]) + " " + str(-1) + " " + str(-1) + "\n")
                             file.close()
@@ -377,13 +383,18 @@ def gen_run_experiment(pbar, param_names, object_name="bball", tools=("rake", "s
                 kld = KLD(real_eff_history, sim_eff_history)
                 if PLOTTING:
                     plt.scatter(real_eff_history[:, 1], -real_eff_history[:, 0], s=40, c="red", edgecolors='none',
-                                label="real")
-                    plt.scatter(sim_eff_history[:, 1], -sim_eff_history[:, 0], s=40, c="blue", edgecolors='none',
                                 label="sim")
+                    plt.scatter(sim_eff_history[:, 1], -sim_eff_history[:, 0], s=40, c="blue", edgecolors='none',
+                                label="opt")
                     plt.legend(loc=2)
                     plt.ylim(-0.3, 0.3)
                     plt.xlim(-0.3, 0.3)
-                    plt.title('action: {}, tool: {}'.format(action_name, tool_name))
+                    #plt.title('action: {}, tool: {}'.format(action_name, tool_name))
+                    plt.title('a: {}, t: {} '.format(action_name, tool_name) +
+                              '\n' +
+                              ' '.join(['%s:: %.2f' % kv for kv in dic_params.items()]) +
+                              '\n' +
+                              ' c: {:.2f}'.format(kld))
                     plt.xlabel('[m]')
                     plt.ylabel('[m]')
                     # optimization
@@ -423,11 +434,11 @@ def optimize(param_names, fname, object_name="bball", opt_f=gp_minimize):
 def not_optimize(param_names, fname, object_name="bball"):
     with tqdm(total= 1, file=sys.stdout) as pbar:
         run_experiment = gen_run_experiment(pbar, param_names, object_name=object_name)
-        params = [3.7702, 0.000606869, 6.362]
+        params = [4.32, 0.0, 0.19]
         cost = run_experiment(params)
 
         run_experiment_test = gen_run_experiment(pbar, param_names, object_name= object_name, tools=("hook"))
-        cost_text = run_experiment_test(params)
+        cost_test = run_experiment_test(params)
 
     return None
 
@@ -484,11 +495,13 @@ if __name__ == "__main__":
     call_simulator()
     param_names = ['lateralFriction', 'rollingFriction', 'mass']  # , 'xnoise', 'ynoise']
 
-    object_name = ["bball", ]
+    object_name = ["ylego", ]
     # object_name = ["lemon",]
+
 
     for obj in object_name:
         fname = "saved/gp_fixed_{}.bz2".format(obj)
         logging.info("file name: " + fname)
+        #optimize(param_names, fname, obj, opt_f=gp_minimize)
         not_optimize(param_names, fname, obj)
         #test(param_names, fname, obj)

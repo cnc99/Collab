@@ -1,0 +1,22 @@
+Bball:
+
+{'lateralFriction': 0.7168528229292173, 'rollingFriction': 0.0008592426705542509, 'mass': 2.6564886830684964}
+cost: 6.76: 
+{'lateralFriction': 0.23000107485753377, 'rollingFriction': 0.00045614891952435843, 'mass': 7.97912613276863}
+cost: 4.74:  
+{'lateralFriction': 1.2558588539745315, 'rollingFriction': 0.000827703852874809, 'mass': 3.2271672982972306}
+cost: 13.02:  
+{'lateralFriction': 0.38233991006493206, 'rollingFriction': 0.0009504708620361106, 'mass': 7.487323037490926}
+cost: 6.53:  
+{'lateralFriction': 0.969740095381205, 'rollingFriction': 0.0003014609604074818, 'mass': 2.067835376157441}
+cost: 18.71:  
+{'lateralFriction': 0.4285762298412994, 'rollingFriction': 0.0005066061731192049, 'mass': 5.511082344654029}
+cost: 5.57:  
+{'lateralFriction': 4.589090898852492, 'rollingFriction': 0.0003253838279282851, 'mass': 5.572725448900159}
+cost: 2.20:  
+{'lateralFriction': 1.60910457862305, 'rollingFriction': 0.0002926999253284049, 'mass': 4.04957387371705}
+cost: 27.41:  
+{'lateralFriction': 4.483431619744083, 'rollingFriction': 0.000742562706347003, 'mass': 4.260797254106302}
+cost: 4.95: 
+{'lateralFriction': 3.8736078738058195, 'rollingFriction': 0.0006350681450430242, 'mass': 0.38160848213382165}
+cost: 3.70
