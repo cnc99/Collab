@@ -240,7 +240,8 @@ def experiment_setup(params, param_names, pbar, object_name, tools, actions):
 
         # Read simulated dataset:
         target_pos, target_var, gnd_weight, mdist, real_eff_history = load_experiment(
-                   "simulated-dataset/{}/{}/{}/effData4.txt".format(tool_name, object_name, action_name),get_eff_data=True)
+                   "simulated-dataset/{}/{}/{}/effDataX.txt".format(tool_name, object_name, action_name),get_eff_data=True)
+
 
         single_effs = Parallel(n_jobs=3)(delayed(single_experiment)(dic_params,
                   tool_name,
@@ -282,6 +283,12 @@ def experiment_setup(params, param_names, pbar, object_name, tools, actions):
     print('\033[93m' + str(dic_params)+'\033[0m')
     pbar.set_description('cost: %0.2f' % (out))
     pbar.update(1)
+
+    #write a file with all the parameters from the optimisation
+    file = open("plots/Dataset_X_Opt-to-Sim_Results.txt", "a+")
+    file.write(str(params[0]) + " " + str(params[1]) + " " + str(params[2]) + " " + str(out) + "\n")
+    file.close()
+
     return out
 
 
@@ -323,11 +330,11 @@ def single_experiment(dic_params, tool_name, object_name, action_name, idx):
 
 
           mu = init_poses[tool_name][action_name]
-          yaw, pitch, roll, x, y = np.random.uniform(np.array([-0.5,0.0,0.0, mu[3], mu[4]]),np.array([0.5,0.0,0.0, mu[3], mu[4]]))
+          yaw, pitch, roll, x, y = np.random.uniform(np.array([-np.pi/6,0.0,0.0, mu[3], mu[4]]),np.array([np.pi/6,0.0,0.0, mu[3], mu[4]]))
           #yaw, pitch, roll, x, y = np.random.normal(mu, np.array([1.0, 1.0, 1.0, 0.0, 0.0]))  #yaw: around the z axis
           initial_xy = np.array([x, y])
 
-          p.resetBasePositionAndOrientation(objID, posObj=[x, y, 0.05], ornObj=[yaw, pitch, roll, 1])
+          p.resetBasePositionAndOrientation(objID, posObj=[x, y, 0.05], ornObj=p.getQuaternionFromEuler([roll, pitch, yaw]))
           dic_params2=dict(dic_params)
           dic_params2['linearDamping']=0.0
           dic_params2['angularDamping']=0.0
@@ -402,6 +409,8 @@ def single_experiment(dic_params, tool_name, object_name, action_name, idx):
 
           success = True
 
+
+
       except ValueError:
           p.resetSimulation()
           p.setAdditionalSearchPath(pybullet_data.getDataPath())  # optionally
@@ -433,7 +442,7 @@ def not_optimize(param_names, fname):
     from parametersConfig import train_tools, train_actions, test_actions, test_tools
     with tqdm(total= 1, file=sys.stdout) as pbar:
         run_experiment = gen_run_experiment(pbar, param_names, train_tools, train_actions)
-        params = [4.32, 0.0, 0.19]
+        params = [2.00, 2.00, 2.00]
         cost = run_experiment(params)
 
         #run_experiment_test = gen_run_experiment(pbar, param_names, test_tools, test_actions)
@@ -506,6 +515,12 @@ if __name__ == "__main__":
   #    not_optimize(param_names,fname)
   #    i = i+1
   #print(costs_list)
+
+  #file = open("plots/Dataset_X_60exp_Sim-to-Sim_Costs.txt", "a+")
+  #for cost in costs_list:
+  #  file.write(str(cost) + "\n")
+  #file.close()
+
   #mean_cost = sum(costs_list) / len(costs_list)
   #stdev = statistics.stdev(costs_list)
   #print("Mean cost: " + str(mean_cost))
