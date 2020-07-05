@@ -1,8 +1,20 @@
+import statistics
+import numpy
+
 from matplotlib import pyplot as plt
 import pylab
 
+Simulated_dataset_description = [['Dataset1','yaw, pitch, roll with Guassian Noise Std Dev = 1'],
+                                 ['Dataset2', "yaw with Uniform Noise [-5.0, 5.0]"],
+                                 ['Dataset3', "yaw with Uniform Noise [-2.0, 2.0]"],
+                                 ['Dataset4', "yaw with Uniform Noise [-0.5, 0.5]"]]
 
-def plotcreator(object_name="ylego", tools=("rake", "stick", "hook"), actions=("tap_from_left", "push", "draw", "tap_from_right")):
+yball_parameters = [3.90,0.00,0.01]
+ylego_parameters = [4.32, 0.00, 0.19]
+
+
+# See positions of datasets
+def finalpos(object_name="ylego", tools=("rake", "stick", "hook"), actions=("tap_from_left", "push", "draw", "tap_from_right")):
     for tool_name in tools:
         for action_name in actions:
             f = open("affordance-datasets/visual-affordances-of-objects-and-tools/{}/{}/{}/effData.txt".format(tool_name, object_name, action_name), "r")
@@ -23,7 +35,8 @@ def plotcreator(object_name="ylego", tools=("rake", "stick", "hook"), actions=("
             plt.savefig("simulated-dataset/{}/{}/{}/{}.pdf".format(tool_name, object_name, action_name, tool_name+"_"+object_name+"_"+action_name))
             plt.show()
 
-def OriginalDatasetPlots():
+
+def OriginalDatasetPlots(): #for ylego
     def lateralFriction_plot():
         lateralFriction = [0.28061109132003315, 1.5293000781387358, 0.9298764184258806, 1.154857670865772, 4.562516010170595,
                              0.6148787846359659, 4.7557960472420895, 4.13912044921352, 4.020440843962487, 2.0103739387107895,
@@ -38,7 +51,7 @@ def OriginalDatasetPlots():
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Lateral Friction')
-        plt.title('Lateral Friction')
+        plt.title('Lateral Friction' + '\n' + Simulated_dataset_description[0][1])
         plt.savefig("plots/lateralFriction.png")
         plt.show()
 
@@ -56,8 +69,8 @@ def OriginalDatasetPlots():
         plt.ylim(0, 0.01)
         plt.xlim(0, 20)
         plt.xlabel('cost')
-        plt.ylabel('Rolling Friction')
-        plt.title('Rolling Friction')
+        plt.ylabel('Rolling Friction' )
+        plt.title('Rolling Friction'+ '\n' + Simulated_dataset_description[0][1])
         plt.savefig("plots/rollingFriction.png")
         plt.show()
 
@@ -74,15 +87,17 @@ def OriginalDatasetPlots():
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Mass')
-        plt.title('Mass')
+        plt.title('Mass'+ '\n' + Simulated_dataset_description[0][1])
         plt.savefig("plots/mass.png")
         plt.show()
 
     return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
 
+
+# Opt-to-Sim for different datasets (parameter vs cost)
 def Dataset2Plots():
     def lateralFriction_plot():
-        f = open("plots/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -90,19 +105,24 @@ def Dataset2Plots():
             y.append(float(line.split()[0]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 4.32, s=40, c="blue", edgecolors='none', label="real")
+
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[0], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[0], color='blue', linestyle='-', label = "real")
+
         plt.legend(loc=2)
         plt.ylim(0, 8)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Lateral Friction')
-        plt.title('Lateral Friction')
+        plt.title('Lateral Friction'+ '\n' + Simulated_dataset_description[1][1])
         plt.savefig("plots/lateralFriction2.png")
         plt.show()
 
 
     def rollingFriction_plot():
-        f = open("plots/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -110,19 +130,22 @@ def Dataset2Plots():
             y.append(float(line.split()[2]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 0.00, s=40, c="blue", edgecolors='none', label="real")
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[1], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[1], color='blue', linestyle='-', label = "real")
         plt.legend(loc=2)
         plt.ylim(0, 0.2)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Rolling Friction')
-        plt.title('Rolling Friction')
+        plt.title('Rolling Friction'+ '\n' + Simulated_dataset_description[1][1])
         plt.savefig("plots/rollingFriction2.png")
         plt.show()
 
 
     def mass_plot():
-        f = open("plots/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_2_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -130,13 +153,16 @@ def Dataset2Plots():
             y.append(float(line.split()[1]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 0.19, s=40, c="blue", edgecolors='none', label="real")
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[2], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[2], color='blue', linestyle='-', label = "real")
         plt.legend(loc=2)
         plt.ylim(0, 0.2)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Mass')
-        plt.title('Mass')
+        plt.title('Mass'+ '\n' + Simulated_dataset_description[1][1])
         plt.savefig("plots/mass2.png")
         plt.show()
 
@@ -144,7 +170,7 @@ def Dataset2Plots():
 
 def Dataset3Plots():
     def lateralFriction_plot():
-        f = open("plots/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -152,19 +178,22 @@ def Dataset3Plots():
             y.append(float(line.split()[0]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 4.32, s=40, c="blue", edgecolors='none', label="real")
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[0], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[0], color='blue', linestyle='-', label = "real")
         plt.legend(loc=2)
         plt.ylim(0, 8)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Lateral Friction')
-        plt.title('Lateral Friction')
+        plt.title('Lateral Friction'+ '\n' + Simulated_dataset_description[2][1])
         plt.savefig("plots/lateralFriction3.png")
         plt.show()
 
 
     def rollingFriction_plot():
-        f = open("plots/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -172,19 +201,22 @@ def Dataset3Plots():
             y.append(float(line.split()[2]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 0.00, s=40, c="blue", edgecolors='none', label="real")
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[1], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[1], color='blue', linestyle='-', label = "real")
         plt.legend(loc=2)
         plt.ylim(0, 0.3)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Rolling Friction')
-        plt.title('Rolling Friction')
+        plt.title('Rolling Friction'+ '\n' + Simulated_dataset_description[2][1])
         plt.savefig("plots/rollingFriction3.png")
         plt.show()
 
 
     def mass_plot():
-        f = open("plots/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_3_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -192,13 +224,16 @@ def Dataset3Plots():
             y.append(float(line.split()[1]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 0.19, s=40, c="blue", edgecolors='none', label="real")
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[2], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[2], color='blue', linestyle='-', label = "real")
         plt.legend(loc=2)
         plt.ylim(0, 0.2)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Mass')
-        plt.title('Mass')
+        plt.title('Mass'+ '\n' + Simulated_dataset_description[2][1])
         plt.savefig("plots/mass3.png")
         plt.show()
 
@@ -206,7 +241,7 @@ def Dataset3Plots():
 
 def Dataset4Plots():
     def lateralFriction_plot():
-        f = open("plots/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -214,19 +249,22 @@ def Dataset4Plots():
             y.append(float(line.split()[0]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 4.32, s=40, c="blue", edgecolors='none', label="real")
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[0], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[0], color='blue', linestyle='-', label = "real")
         plt.legend(loc=2)
         plt.ylim(0, 8)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Lateral Friction')
-        plt.title('Lateral Friction')
+        plt.title('Lateral Friction'+ '\n' + Simulated_dataset_description[3][1])
         plt.savefig("plots/lateralFriction4.png")
         plt.show()
 
 
     def rollingFriction_plot():
-        f = open("plots/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -234,19 +272,22 @@ def Dataset4Plots():
             y.append(float(line.split()[2]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 0.00, s=40, c="blue", edgecolors='none', label="real")
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[1], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[1], color='blue', linestyle='-', label = "real")
         plt.legend(loc=2)
         plt.ylim(0, 0.2)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Rolling Friction')
-        plt.title('Rolling Friction')
+        plt.title('Rolling Friction'+ '\n' + Simulated_dataset_description[3][1])
         plt.savefig("plots/rollingFriction4.png")
         plt.show()
 
 
     def mass_plot():
-        f = open("plots/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt", "r")
+        f = open("plots/{}/New-simulated-datasets/Dataset_4_Opt-to-Sim_Results.txt".format(object), "r")
         cost = []
         y = []
         for line in f.readlines():
@@ -254,22 +295,863 @@ def Dataset4Plots():
             y.append(float(line.split()[1]))
 
         plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
-        plt.scatter(0.67, 0.19, s=40, c="blue", edgecolors='none', label="real")
+        if object == "ylego":
+            plt.axhline(y=ylego_parameters[2], color='blue', linestyle='-', label = "real")
+        elif object == "yball":
+            plt.axhline(y=yball_parameters[2], color='blue', linestyle='-', label = "real")
         plt.legend(loc=2)
         plt.ylim(0, 0.2)
         plt.xlim(0, 20)
         plt.xlabel('cost')
         plt.ylabel('Mass')
-        plt.title('Mass')
+        plt.title('Mass'+ '\n' + Simulated_dataset_description[3][1])
         plt.savefig("plots/mass4.png")
         plt.show()
 
     return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
 
+
+
+#boxplots for the Sim-to-Sim tests with different datasets
+def boxplots():
+    datasets = [2,3,4]
+    for dataset in datasets:
+        data = open("plots/{}/New-simulated-datasets/Dataset_{}_Sim-to-Sim_Costs.txt".format(object, dataset), "r")
+        costs = []
+        for line in data.readlines():
+            costs.append(float(line.split()[0]))
+
+        plt.boxplot(costs)
+        plt.ylabel('cost')
+        plt.title('Simulated Dataset {}'.format(dataset) + '\n' + Simulated_dataset_description[dataset-1][1])
+        plt.savefig("plots/{}/New-simulated-datasets/boxplot_dataset_{}.png".format(object, dataset, dataset))
+        plt.show()
+
+def violinplots():
+    datasets = [2,3,4]
+    for dataset in datasets:
+        data = open("plots/{}/New-simulated-datasets/Dataset_{}_Sim-to-Sim_Costs.txt".format(object, dataset), "r")
+        costs = []
+        for line in data.readlines():
+            costs.append(float(line.split()[0]))
+
+        plt.violinplot(costs,showmeans=True, showextrema=True, showmedians=True )
+        plt.ylabel('cost')
+        plt.title('Simulated Dataset {}'.format(dataset) + '\n' + Simulated_dataset_description[dataset-1][1])
+        plt.savefig("plots/{}/New-simulated-datasets/violinplot_dataset_{}.png".format(object, dataset, dataset))
+        plt.show()
+
+def violinplotsall():
+    datasets = [2, 3, 4]
+    costs = [[], [], []]
+    for dataset in datasets:
+        data = open("plots/{}/New-simulated-datasets/Dataset_{}_Sim-to-Sim_Costs.txt".format(object, dataset),
+                    "r")
+        for line in data.readlines():
+            costs[dataset - 2].append(float(line.split()[0]))
+
+    plt.violinplot(costs, datasets, showmeans=True, showextrema=True, showmedians=True)
+
+    plt.xticks(datasets, ['[-5,5]', '[-2,2]', '[-0.5,0.5]'])
+    plt.xlabel('Simulated Dataset')
+    plt.ylabel('cost')
+    plt.ylim(0, 10)
+    plt.savefig("plots/{}/New-simulated-datasets/violinplots.png".format(object, dataset, dataset))
+    plt.show()
+
+
+
+def runs_violinplots():
+    datasets = [2,3,4]
+    costs_5 = []
+    costs_30 = []
+    costs_60 = []
+    for dataset in datasets:
+        file_5 = open("plots/{}/No of runs/Dataset {}/Dataset_{}_Sim-to-Sim_Costs_5.txt".format(object, dataset, dataset), "r")
+        for line in file_5:
+            costs_5.append(float(line.split()[0]))
+        file_60 = open("plots/{}/No of runs/Dataset {}/Dataset_{}_Sim-to-Sim_Costs_60.txt".format(object, dataset, dataset), "r")
+        for line in file_60:
+            costs_60.append(float(line.split()[0]))
+        file_30 = open("plots/{}/New-simulated-datasets/Dataset_{}_Sim-to-Sim_Costs.txt".format(object, dataset), "r")
+        for line in file_30:
+            costs_30.append(float(line.split()[0]))
+
+        costs = [costs_5, costs_30, costs_60]
+        plt.violinplot(costs, [1,2,3], showmeans=True, showextrema=False, showmedians=True)
+        plt.xticks([1,2,3],[5,30,60])
+        plt.xlabel('Number of Runs')
+        plt.ylabel('cost')
+        plt.ylim(0,18)
+        plt.title("Dataset {}". format(dataset) + "\n" + Simulated_dataset_description[dataset-1][1])
+        plt.savefig("plots/{}/No of runs/ violinplots_dataset_{}.png".format(object, dataset))
+        plt.show()
+
+
+
+def costscalculator(simulated_data, simulator_parameters):
+
+    costs = []
+
+    if simulated_data == "noisedatasets" and simulator_parameters == "noise":
+
+        datasets = [0.5,5,30,90]
+        for dataset in datasets:
+            file = open("plots/{}/Sim to Sim/Dataset {}/Dataset_{}_Sim-to-Sim_Costs.txt".format(object,dataset,dataset), "r")
+            for line in file:
+                costs.append(float(line.split()[0]))
+
+            mean_cost = sum(costs)/len(costs)
+            stdev = statistics.stdev(costs)
+
+            print("Dataset {}".format(dataset) + "\n" + "Mean cost: " + str(mean_cost) + "\n" + "Std dev: " + str(stdev) + "\n \n")
+
+            costs.clear()
+
+    if simulated_data == "noisedatasets" and simulator_parameters == "noruns":
+
+        datasets = [5, 30]
+        no_runs = [5, 60] #30 is always calculated
+        for dataset in datasets:
+            file = open("plots/{}/Sim to Sim/Dataset {}/Dataset_{}_Sim-to-Sim_Costs.txt".format(object,dataset,dataset), "r")
+            for line in file:
+                costs.append(float(line.split()[0]))
+
+            mean_cost = sum(costs) / len(costs)
+            stdev = statistics.stdev(costs)
+
+            print("Dataset {}; 30 runs".format(dataset) + "\n" + "Mean cost: " + str(mean_cost) + "\n" + "Std dev: " + str(
+                stdev) + "\n \n")
+
+            costs.clear()
+
+            for run in no_runs:
+
+                file = open("plots/{}/No of runs/Dataset {}/Dataset_{}_Sim-to-Sim_Costs_{}runs.txt".format(object,dataset,dataset,run), "r")
+                for line in file:
+                    costs.append(float(line.split()[0]))
+
+                mean_cost = sum(costs) / len(costs)
+                stdev = statistics.stdev(costs)
+
+                print("Dataset {}; {} runs".format(dataset,run) + "\n" + "Mean cost: " + str(
+                    mean_cost) + "\n" + "Std dev: " + str(
+                    stdev) + "\n \n")
+
+                costs.clear()
+
+    if simulated_data == "X" and simulator_parameters == "noise":
+        noise_list = [5,30,90]
+        for noise in noise_list:
+            file = open("plots/{}/Sim to Sim/Dataset X/Dataset_X_Sim-to-Sim_{}_Costs.txt".format(object,noise),"r")
+
+            for line in file:
+                costs.append(float(line.split()[0]))
+
+            mean_cost = sum(costs) / len(costs)
+            stdev = statistics.stdev(costs)
+
+            print("Dataset X; noise {} ".format(noise) + "\n" + "Mean cost: " + str(
+                mean_cost) + "\n" + "Std dev: " + str(
+                stdev) + "\n \n")
+
+            costs.clear()
+
+    if simulated_data == "X" and simulator_parameters == "noexp":
+        no_experiments = [5,20,60] #40 is always calculated
+
+        file = open(
+            "plots/{}/Sim to Sim/Dataset X/Dataset_X_Sim-to-Sim_30_Costs.txt".format(object), "r")
+        for line in file:
+            costs.append(float(line.split()[0]))
+
+        mean_cost = sum(costs) / len(costs)
+        stdev = statistics.stdev(costs)
+
+        print("Dataset X; 40 experiments" + "\n" + "Mean cost: " + str(
+            mean_cost) + "\n" + "Std dev: " + str(
+            stdev) + "\n \n")
+
+        costs.clear()
+
+        for noexp in no_experiments:
+
+            file = open(
+                "plots/{}/No of experiments/Dataset_X_Sim-to-Sim_{}exp_Costs.txt".format(object, noexp), "r")
+
+            for line in file:
+                costs.append(float(line.split()[0]))
+
+            mean_cost = sum(costs) / len(costs)
+            stdev = statistics.stdev(costs)
+
+            print("Dataset X; {} experiments".format(noexp) + "\n" + "Mean cost: " + str(
+                mean_cost) + "\n" + "Std dev: " + str(
+                stdev) + "\n \n")
+
+            costs.clear()
+
+
+
+    if simulated_data == "Xnoexp" and simulator_parameters == "30runs":
+
+        no_experiments = [5, 20, 60] #40 is always calculated
+
+        file = open(
+            "plots/{}/Sim to Sim/Dataset X/Dataset_X_Sim-to-Sim_30_Costs.txt".format(object), "r")
+        for line in file:
+            costs.append(float(line.split()[0]))
+
+        mean_cost = sum(costs) / len(costs)
+        stdev = statistics.stdev(costs)
+
+        print("Dataset X; 40 experiments" + "\n" + "Mean cost: " + str(
+            mean_cost) + "\n" + "Std dev: " + str(
+            stdev) + "\n \n")
+
+        costs.clear()
+
+        for noexp in no_experiments:
+
+            file = open("plots/{}/Sim to Sim/Dataset X {}exp/Dataset_X_{}exp_Sim-to-Sim_Costs.txt".format(object,noexp,noexp), "r")
+            for line in file:
+                costs.append(float(line.split()[0]))
+
+            mean_cost = sum(costs) / len(costs)
+            stdev = statistics.stdev(costs)
+
+            print("Dataset X with {} experiments".format(noexp) + "\n" + "Mean cost: " + str(
+                mean_cost) + "\n" + "Std dev: " + str(
+                stdev) + "\n \n")
+
+            costs.clear()
+
+
+def experiments_plots(simulated_data, simulator_parameters):
+
+    costs = []
+    if simulated_data == "noisedatasets" and simulator_parameters == "noise": #boxplots with simulated datasets varying with noise
+
+        datasets = [0.5,5,30,90]
+        for dataset in datasets:
+            file = open("plots/{}/Sim to Sim/Dataset {}/Dataset_{}_Sim-to-Sim_Costs.txt".format(object,dataset,dataset), "r")
+            for line in file:
+                costs.append(float(line.split()[0]))
+
+            plt.boxplot(costs)
+            plt.ylabel('cost')
+            plt.title('Simulated Dataset {}'.format(dataset) + '\n' + 'Simulation noise: [-{},{}]'.format(dataset,dataset))
+            plt.savefig("plots/{}/boxplot_dataset_{}.png".format(object, dataset, dataset))
+            plt.show()
+
+            costs.clear()
+
+    if simulated_data == "noisedatasets" and simulator_parameters == "noruns": #violin plots for simulated datasets varying with no of runs
+
+        datasets = [5, 30]
+        no_runs = [5, 60] #30 is always calculated
+        costs = {"costs_5": [], "costs_30": [], "costs_60": []}
+
+        for dataset in datasets:
+
+
+            file = open("plots/{}/Sim to Sim/Dataset {}/Dataset_{}_Sim-to-Sim_Costs.txt".format(object,dataset,dataset), "r")
+            for line in file:
+                costs.get("costs_30").append(float(line.split()[0]))
+
+            for run in no_runs:
+
+                file = open("plots/{}/No of runs/Dataset {}/Dataset_{}_Sim-to-Sim_Costs_{}runs.txt".format(object,dataset,dataset,run), "r")
+                for line in file:
+                    costs.get("costs_{}".format(run)).append(float(line.split()[0]))
+
+            plt.violinplot([costs.get("costs_5"), costs.get("costs_30"), costs.get("costs_60")], [1, 2, 3], showmeans=True, showextrema=False, showmedians=True)
+            plt.xticks([1, 2, 3], [5, 30, 60])
+            plt.xlabel('Number of Runs')
+            plt.ylabel('cost')
+            plt.ylim(0, 8)
+            plt.title(
+                'Simulated Dataset {}'.format(dataset) + '\n' + 'Simulation noise: [-{},{}]'.format(dataset, dataset))
+            plt.savefig("plots/{}/violinplots_dataset_{}_no_of_runs.png".format(object, dataset))
+            plt.show()
+
+            costs.get("costs_5").clear()
+            costs.get("costs_30").clear()
+            costs.get("costs_60").clear()
+
+    if simulated_data == "X" and simulator_parameters == "noise": #violin plots with dataset X and varying noise in the simulation
+        noise_list = [5,30,90]
+        costs = {"costs_5": [], "costs_30": [], "costs_90": []}
+
+        for noise in noise_list:
+
+            file = open("plots/{}/Sim to Sim/Dataset X/Dataset_X_Sim-to-Sim_{}_Costs.txt".format(object,noise),"r")
+
+            for line in file:
+                costs.get("costs_{}".format(noise)).append(float(line.split()[0]))
+
+        plt.violinplot([costs.get("costs_5"), costs.get("costs_30"), costs.get("costs_90")], [1, 2, 3], showmeans=True, showextrema=False, showmedians=True)
+        plt.xticks([1, 2, 3], ["[-5,5]", "[-30,30]", "[-90,90]"])
+        plt.xlabel('Noise')
+        plt.ylabel('cost')
+        plt.ylim(0, 5)
+        plt.title(
+            'Simulated Dataset X' + '\n' + 'Noise: [-30,30]')
+        plt.savefig("plots/{}/violinplots_dataset_X_noise.png".format(object))
+        plt.show()
+
+
+    if simulated_data == "X" and simulator_parameters == "noexp": #violet plots for dataset X and simulator with varying N
+        no_experiments = [5,20,60] #40 is always calculated
+        costs = {"costs_5": [], "costs_20": [], "costs_40": [], "costs_60": []}
+
+        file = open(
+            "plots/{}/Sim to Sim/Dataset X/Dataset_X_Sim-to-Sim_30_Costs.txt".format(object), "r")
+        for line in file:
+            costs.get("costs_40").append(float(line.split()[0]))
+
+
+        for noexp in no_experiments:
+
+            file = open(
+                "plots/{}/No of experiments/Dataset_X_Sim-to-Sim_{}exp_Costs.txt".format(object, noexp), "r")
+
+            for line in file:
+                costs.get("costs_{}".format(noexp)).append(float(line.split()[0]))
+
+        costs_list = [costs.get("costs_5"), costs.get("costs_20"), costs.get("costs_40"), costs.get("costs_60")]
+
+        plt.violinplot(costs_list, [1, 2, 3, 4], showmeans=True, showextrema=False, showmedians=True)
+        plt.xticks([1, 2, 3, 4], [5,20,40,60])
+        plt.xlabel('Number of experiments')
+        plt.ylabel('cost')
+        plt.ylim(0, 200)
+        plt.title(
+            'Simulated Dataset X' + '\n' + 'Noise: [-30,30]' + '\n' + '40 experiments')
+        plt.savefig("plots/{}/violinplots_dataset_X_noexp.png".format(object))
+        plt.show()
+
+
+
+
+    if simulated_data == "Xnoexp" and simulator_parameters == "30runs": #violin plots for different dataset X's with varying N
+
+        no_experiments = [5, 20, 60] #40 is always calculated
+        costs = {"costs_5": [], "costs_20": [], "costs_40": [], "costs_60": []}
+
+        file = open(
+            "plots/{}/Sim to Sim/Dataset X/Dataset_X_Sim-to-Sim_30_Costs.txt".format(object), "r")
+        for line in file:
+            costs.get("costs_40").append(float(line.split()[0]))
+
+        for noexp in no_experiments:
+
+            file = open("plots/{}/Sim to Sim/Dataset X {}exp/Dataset_X_{}exp_Sim-to-Sim_Costs.txt".format(object,noexp,noexp), "r")
+            for line in file:
+                costs.get("costs_{}".format(noexp)).append(float(line.split()[0]))
+
+
+        costs_list = [costs.get("costs_5"), costs.get("costs_20"), costs.get("costs_40"), costs.get("costs_60")]
+        plt.violinplot(costs_list, [1, 2, 3, 4], showmeans=True, showextrema=False, showmedians=True)
+        plt.xticks([1, 2, 3, 4], [5, 20, 40, 60])
+        plt.xlabel('Number of experiments on the sim dataset')
+        plt.ylabel('cost')
+        #plt.ylim(0, 18)
+        plt.savefig("plots/{}/violinplots_dataset_Xexp.png".format(object))
+        plt.show()
+
+
+
+def opt_to_sim_plots():
+    datasets = [0.5, 5, 30, 90]
+    if object == "ylego":
+        real_parameters = {'lateralFriction' : 4.32, 'rollingFriction': 0.00, 'mass': 0.19}
+
+    elif object == "yball":
+        real_parameters = {'lateralFriction': 3.90, 'rollingFriction': 0.00, 'mass': 0.01}
+
+
+    def lateralFriction_plot(dataset):
+        f = open("plots/{}/Opt to Sim/Dataset_{}_Opt-to-Sim_Results.txt".format(object,dataset), "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[0]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.axhline(real_parameters.get('lateralFriction'), color='blue', linestyle='-', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 8)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Lateral Friction')
+        plt.title('Lateral Friction' + '\n' + 'Dataset {}'.format(dataset))
+        plt.savefig("plots/{}/lateralFriction_dataset{}.png".format(object, dataset))
+        plt.show()
+
+    def rollingFriction_plot(dataset):
+        f = open("plots/{}/Opt to Sim/Dataset_{}_Opt-to-Sim_Results.txt".format(object,dataset), "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[2]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.axhline(real_parameters.get('rollingFriction'), color='blue', linestyle='-', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.2)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Rolling Friction')
+        plt.title('Rolling Friction' + '\n' + 'Dataset {}'.format(dataset))
+        plt.savefig("plots/{}/rollingFriction_dataset{}.png".format(object, dataset))
+        plt.show()
+
+    def mass_plot(dataset):
+        f = open("plots/{}/Opt to Sim/Dataset_{}_Opt-to-Sim_Results.txt".format(object,dataset), "r")
+        cost = []
+        y = []
+        for line in f.readlines():
+            cost.append(float(line.split()[3]))
+            y.append(float(line.split()[1]))
+
+        plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+        plt.axhline(real_parameters.get('mass'), color='blue', linestyle='-', label="real")
+        plt.legend(loc=2)
+        plt.ylim(0, 0.2)
+        plt.xlim(0, 20)
+        plt.xlabel('cost')
+        plt.ylabel('Mass')
+        plt.title('Mass' + '\n' + 'Dataset {}'.format(dataset))
+        plt.savefig("plots/{}/mass_dataset{}.png".format(object, dataset))
+        plt.show()
+
+    for dataset in datasets:
+         lateralFriction_plot(dataset), rollingFriction_plot(dataset), mass_plot(dataset)
+    return
+
+
+def opt_to_sim_X_plots():
+    datasets = [5, 20, 60]
+    real_parameters = {'lateralFriction' : 2.00, 'rollingFriction': 2.00, 'mass': 2.00}
+
+    def default():
+
+        def lateralFriction_plot():
+            f = open("plots/{}/Opt to Sim/Dataset_X_Opt-to-Sim_Results.txt".format(object), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[0]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('lateralFriction'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Lateral Friction')
+            plt.title('Lateral Friction' + '\n' + 'Dataset X')
+            plt.savefig("plots/{}/lateralFriction_datasetX.png".format(object))
+            plt.show()
+
+        def rollingFriction_plot():
+            f = open("plots/{}/Opt to Sim/Dataset_X_Opt-to-Sim_Results.txt".format(object), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[2]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('rollingFriction'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Rolling Friction')
+            plt.title('Rolling Friction' + '\n' + 'Dataset X')
+            plt.savefig("plots/{}/rollingFriction_datasetX.png".format(object))
+            plt.show()
+
+        def mass_plot():
+            f = open("plots/{}/Opt to Sim/Dataset_X_Opt-to-Sim_Results.txt".format(object), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[1]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('mass'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Mass')
+            plt.title('Mass' + '\n' + 'Dataset X')
+            plt.savefig("plots/{}/mass_datasetX.png".format(object))
+            plt.show()
+
+        return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
+
+    def noexperiments(dataset):
+
+        def lateralFriction_plot():
+            f = open("plots/{}/No of experiments/Dataset_X_Opt-to-Sim_{}exp_Results.txt".format(object,dataset), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[0]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('lateralFriction'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Lateral Friction')
+            plt.title('Lateral Friction' + '\n' + 'Dataset X' + '\n' + '{} experiments'.format(dataset))
+            plt.savefig("plots/{}/lateralFriction_datasetX_{}experiments.png".format(object, dataset))
+            plt.show()
+
+        def rollingFriction_plot():
+            f = open("plots/{}/No of experiments/Dataset_X_Opt-to-Sim_{}exp_Results.txt".format(object,dataset), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[2]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('rollingFriction'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Rolling Friction')
+            plt.title('Rolling Friction' + '\n' + 'Dataset X' + '\n' + '{} experiments'.format(dataset))
+            plt.savefig("plots/{}/rollingFriction_datasetX_{}experiments.png".format(object, dataset))
+            plt.show()
+
+        def mass_plot():
+            f = open("plots/{}/No of experiments/Dataset_X_Opt-to-Sim_{}exp_Results.txt".format(object,dataset), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[1]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('mass'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Mass')
+            plt.title('Mass' + '\n' + 'Dataset X' + '\n' + '{} experiments'.format(dataset))
+            plt.savefig("plots/{}/mass_datasetX_{}experiments.png".format(object, dataset))
+            plt.show()
+
+        return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
+
+    def Xvariations(dataset):
+
+        def lateralFriction_plot():
+            f = open("plots/{}/Opt to Sim/Dataset_X_{}exp_Opt-to-Sim_Results.txt".format(object, dataset), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[0]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('lateralFriction'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Lateral Friction')
+            plt.title('Lateral Friction' + '\n' + 'Dataset X {} experiments'.format(dataset))
+            plt.savefig("plots/{}/lateralFriction_datasetX{}exp.png".format(object, dataset))
+            plt.show()
+
+        def rollingFriction_plot():
+            f = open("plots/{}/Opt to Sim/Dataset_X_{}exp_Opt-to-Sim_Results.txt".format(object, dataset), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[2]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('rollingFriction'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Rolling Friction')
+            plt.title('Rolling Friction' + '\n' + 'Dataset X {} experiments'.format(dataset))
+            plt.savefig("plots/{}/rollingFriction_datasetX{}exp.png".format(object, dataset))
+            plt.show()
+
+        def mass_plot():
+            f = open("plots/{}/Opt to Sim/Dataset_X_{}exp_Opt-to-Sim_Results.txt".format(object, dataset), "r")
+            cost = []
+            y = []
+            for line in f.readlines():
+                cost.append(float(line.split()[3]))
+                y.append(float(line.split()[1]))
+
+            plt.scatter(cost, y, s=40, c="red", edgecolors='none', label="opt")
+            plt.axhline(real_parameters.get('mass'), color='blue', linestyle='-', label="real")
+            plt.legend(loc=2)
+            plt.ylim(0, 8)
+            plt.xlim(0, 20)
+            plt.xlabel('cost')
+            plt.ylabel('Mass')
+            plt.title('Mass' + '\n' + 'Dataset X {} experiments'.format(dataset))
+            plt.savefig("plots/{}/mass_datasetX{}exp.png".format(object, dataset))
+            plt.show()
+
+        return lateralFriction_plot(), rollingFriction_plot(), mass_plot()
+
+    for dataset in datasets:
+         noexperiments(dataset), Xvariations(dataset)
+
+    default()
+
+    return
+
+def costovernorm():
+    if object == "ylego":
+        real_parameters = {'lateralFriction' : 4.32, 'rollingFriction': 0.00, 'mass': 0.19}
+
+    elif object == "yball":
+        real_parameters = {'lateralFriction': 3.90, 'rollingFriction': 0.00, 'mass': 0.01}
+
+    X_real_parameters = {'lateralFriction': 2.00, 'rollingFriction': 2.00, 'mass': 2.00}
+
+    file_positions = {'lateralFriction': 0, 'rollingFriction': 1, 'mass': 2, 'cost': 3}
+    no_experiments = [5,20,60]
+   # experiment_paths = {'Opt-to-Sim noise': "plots/{}/Opt to Sim/Dataset_{}_Opt-to-Sim_Results.txt".format(object,dataset),
+   #                     'Opt-to-Sim X experiments': "plots/{}/No of experiments/Dataset_X_Opt-to-Sim_{}exp_Results.txt".format(object,dataset),
+   #                     'Opt-to-Sim X variations': "plots/{}/Opt to Sim/Dataset_X_{}exp_Opt-to-Sim_Results.txt".format(object, dataset),
+   #                     'Opt-to-Sim X': "plots/{}/Opt to Sim/Dataset_X_Opt-to-Sim_Results.txt".format(object)}
+
+    def noise_datasets():
+        noise_datasets = [0.5, 5, 30, 90]
+        noise_colors = {0.5: 'blue', 5: 'red', 30: 'yellow', 90: 'green'}
+        for dataset in noise_datasets:
+            experiment_path = "plots/{}/Opt to Sim/Dataset_{}_Opt-to-Sim_Results.txt".format(object,dataset)
+
+            f = open(experiment_path, "r")
+            cost = []
+            lateralFriction = []
+            rollingFriction = []
+            mass = []
+            for line in f.readlines():
+                cost.append(float(line.split()[file_positions.get('cost')]))
+                lateralFriction.append(real_parameters.get('lateralFriction') - float(line.split()[file_positions.get('lateralFriction')]))
+                rollingFriction.append(real_parameters.get('rollingFriction') - float(line.split()[file_positions.get('rollingFriction')]))
+                mass.append(real_parameters.get('mass') - float(line.split()[file_positions.get('mass')]))
+
+            vector = [] #pick the parameters
+            i = 0
+            while i < len(lateralFriction):
+                vector.append([lateralFriction[i], rollingFriction[i]])
+                i = i+1
+
+            norm = [] #calculate the norms
+            j = 0
+            while j < len(vector):
+                norm.append(numpy.linalg.norm(vector[j],2))
+                j = j+1
+
+
+            plt.scatter(norm, cost, s=40, c= noise_colors.get(dataset), edgecolors='none', label="Dataset {}".format(dataset))
+            plt.legend(loc=2)
+            plt.ylim(0, 100)
+            plt.xlim(0, 4)
+            plt.xlabel('Norm')
+            plt.ylabel('Cost')
+            plt.title('LateralFriction/Rolling Friction')
+
+        plt.savefig("plots/{}/noise_norms_lateralFriction_rollingFriction.png".format(object))
+        plt.show()
+
+    def X_experiments():
+        experiments = [5, 20, 60]
+        noise_colors = {5: 'blue', 20: 'red', 60: 'green'}
+        for dataset in experiments:
+            experiment_path = "plots/{}/No of experiments/Dataset_X_Opt-to-Sim_{}exp_Results.txt".format(object,dataset)
+
+            f = open(experiment_path, "r")
+            cost = []
+            lateralFriction = []
+            rollingFriction = []
+            mass = []
+            for line in f.readlines():
+                cost.append(float(line.split()[file_positions.get('cost')]))
+                lateralFriction.append(real_parameters.get('lateralFriction') - float(line.split()[file_positions.get('lateralFriction')]))
+                rollingFriction.append(real_parameters.get('rollingFriction') - float(line.split()[file_positions.get('rollingFriction')]))
+                mass.append(real_parameters.get('mass') - float(line.split()[file_positions.get('mass')]))
+
+            vector = [] #pick the parameters
+            i = 0
+            while i < len(lateralFriction):
+                vector.append([lateralFriction[i], rollingFriction[i]])
+                i = i+1
+
+            norm = [] #calculate the norms
+            j = 0
+            while j < len(vector):
+                norm.append(numpy.linalg.norm(vector[j],2))
+                j = j+1
+
+
+            plt.scatter(norm, cost, s=40, c= noise_colors.get(dataset), edgecolors='none', label="{} Experiments".format(dataset))
+            plt.legend(loc=2)
+            plt.ylim(0, 100)
+            plt.xlim(0, 4)
+            plt.xlabel('Norm')
+            plt.ylabel('Cost')
+            plt.title('LateralFriction/RollingFriction')
+
+        #40 experiments:
+        experiment_path = "plots/{}/Opt to Sim/Dataset_X_Opt-to-Sim_Results.txt".format(object)
+
+        f = open(experiment_path, "r")
+        cost = []
+        lateralFriction = []
+        rollingFriction = []
+        mass = []
+        for line in f.readlines():
+            cost.append(float(line.split()[file_positions.get('cost')]))
+            lateralFriction.append(
+                real_parameters.get('lateralFriction') - float(line.split()[file_positions.get('lateralFriction')]))
+            rollingFriction.append(
+                real_parameters.get('rollingFriction') - float(line.split()[file_positions.get('rollingFriction')]))
+            mass.append(real_parameters.get('mass') - float(line.split()[file_positions.get('mass')]))
+
+        vector = []  # pick the parameters
+        i = 0
+        while i < len(lateralFriction):
+            vector.append([lateralFriction[i], rollingFriction[i]])
+            i = i + 1
+
+        norm = []  # calculate the norms
+        j = 0
+        while j < len(vector):
+            norm.append(numpy.linalg.norm(vector[j], 2))
+            j = j + 1
+
+        plt.scatter(norm, cost, s=40, c="yellow", edgecolors='none',label="40 Experiments")
+        plt.legend(loc=2)
+        plt.ylim(0, 100)
+        plt.xlim(0, 4)
+        plt.xlabel('Norm')
+        plt.ylabel('Cost')
+        plt.title('LateralFriction/RollingFriction')
+
+        plt.savefig("plots/{}/X_norms_lateralFriction_rollingFriction.png".format(object))
+        plt.show()
+
+    def X_variations():
+        experiments = [5, 20, 60]
+        noise_colors = {5: 'blue', 20: 'red', 60: 'green'}
+        for dataset in experiments:
+            experiment_path = "plots/{}/Opt to Sim/Dataset_X_{}exp_Opt-to-Sim_Results.txt".format(object, dataset)
+
+            f = open(experiment_path, "r")
+            cost = []
+            lateralFriction = []
+            rollingFriction = []
+            mass = []
+            for line in f.readlines():
+                cost.append(float(line.split()[file_positions.get('cost')]))
+                lateralFriction.append(real_parameters.get('lateralFriction') - float(
+                    line.split()[file_positions.get('lateralFriction')]))
+                rollingFriction.append(real_parameters.get('rollingFriction') - float(
+                    line.split()[file_positions.get('rollingFriction')]))
+                mass.append(real_parameters.get('mass') - float(line.split()[file_positions.get('mass')]))
+
+            vector = []  # pick the parameters
+            i = 0
+            while i < len(lateralFriction):
+                vector.append([lateralFriction[i], rollingFriction[i]])
+                i = i + 1
+
+            norm = []  # calculate the norms
+            j = 0
+            while j < len(vector):
+                norm.append(numpy.linalg.norm(vector[j], 2))
+                j = j + 1
+
+            plt.scatter(norm, cost, s=40, c=noise_colors.get(dataset), edgecolors='none',
+                        label="{} Experiments".format(dataset))
+            plt.legend(loc=2)
+            plt.ylim(0, 100)
+            plt.xlim(0, 4)
+            plt.xlabel('Norm')
+            plt.ylabel('Cost')
+            plt.title('LateralFriction/RollingFriction')
+
+        # 40 experiments:
+        experiment_path = "plots/{}/Opt to Sim/Dataset_X_Opt-to-Sim_Results.txt".format(object)
+
+        f = open(experiment_path, "r")
+        cost = []
+        lateralFriction = []
+        rollingFriction = []
+        mass = []
+        for line in f.readlines():
+            cost.append(float(line.split()[file_positions.get('cost')]))
+            lateralFriction.append(
+                real_parameters.get('lateralFriction') - float(line.split()[file_positions.get('lateralFriction')]))
+            rollingFriction.append(
+                real_parameters.get('rollingFriction') - float(line.split()[file_positions.get('rollingFriction')]))
+            mass.append(real_parameters.get('mass') - float(line.split()[file_positions.get('mass')]))
+
+        vector = []  # pick the parameters
+        i = 0
+        while i < len(lateralFriction):
+            vector.append([lateralFriction[i], rollingFriction[i]])
+            i = i + 1
+
+        norm = []  # calculate the norms
+        j = 0
+        while j < len(vector):
+            norm.append(numpy.linalg.norm(vector[j], 2))
+            j = j + 1
+
+        plt.scatter(norm, cost, s=40, c="yellow", edgecolors='none', label="40 Experiments")
+        plt.legend(loc=2)
+        plt.ylim(0, 100)
+        plt.xlim(0, 4)
+        plt.xlabel('Norm')
+        plt.ylabel('Cost')
+        plt.title('LateralFriction/Rolling Friction')
+
+        plt.savefig("plots/{}/Xvariations_norms_lateralFriction_rolling Friction.png".format(object))
+        plt.show()
+
+    return noise_datasets(), X_experiments(), X_variations()
+
+
 if __name__ == "__main__":
-    #plotcreator()
-    OriginalDatasetPlots()
-    Dataset2Plots()
-    Dataset3Plots()
-    Dataset4Plots()
+    object = "ylego"
+
+
+    #costscalculator("Xnoexp","30runs") #pick "noisedatasets"/"X"/"Xnoexp" and "noise"/"noruns"/ "noexp"/"30runs"
+    #experiments_plots("X", "noexp")
+    #opt_to_sim_plots()
+    #opt_to_sim_X_plots()
+    costovernorm()
+
+
     print("Finished")
