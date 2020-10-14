@@ -13,7 +13,7 @@ dbounds = {'lateralFriction': (0.01, 5.0),
 param_names = ['lateralFriction', 'rollingFriction', 'mass']# 'restitution']
 # param_names = ['mass', ]# 'restitution']
 
-train_tools = ("rake","stick",)
+train_tools = ("rake","stick")
 train_actions = ("tap_from_left", "push", "draw", "tap_from_right")
 object_name = "ylego"
 test_tools = ("hook",)
