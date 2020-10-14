@@ -437,7 +437,7 @@ def not_optimize(param_names, fname, object_name="bball"):
         params = [2.00, 2.00, 2.00]
         cost = run_experiment(params)
 
-        run_experiment_test = gen_run_experiment(pbar, param_names, object_name= object_name, tools=("hook"))
+        run_experiment_test = gen_run_experiment(pbar, param_names, object_name= object_name, tools=("hook",))
         cost_test = run_experiment_test(params)
 
     return None
