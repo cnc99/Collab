@@ -240,7 +240,7 @@ def experiment_setup(params, param_names, pbar, object_name, tools, actions):
 
         # Read simulated dataset:
         target_pos, target_var, gnd_weight, mdist, real_eff_history = load_experiment(
-                   "simulated-dataset/{}/{}/{}/effDataX.txt".format(tool_name, object_name, action_name),get_eff_data=True)
+                   "simulated-dataset/{}/{}/{}/effData.txt".format(tool_name, object_name, action_name),get_eff_data=True)
 
 
         single_effs = Parallel(n_jobs=3)(delayed(single_experiment)(dic_params,
