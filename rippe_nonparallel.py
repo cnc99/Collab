@@ -23,7 +23,7 @@ import time
 
 N_EXPERIMENTS = 5  # running experiment per object per tool
 N_TRIALS = 20  # optimization steps
-PYBULLET_INSTANCE = p.GUI
+PYBULLET_INSTANCE = p.DIRECT
 WATCHDOG = True
 PLOTTING = True
 
