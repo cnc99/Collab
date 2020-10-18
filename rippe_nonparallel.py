@@ -21,9 +21,9 @@ from continuous_kl import KL_from_distributions as KLD
 import logging
 import time
 
-N_EXPERIMENTS = 5  # running experiment per object per tool
+N_EXPERIMENTS = 13  # running experiment per object per tool
 N_TRIALS = 20  # optimization steps
-PYBULLET_INSTANCE = p.DIRECT
+PYBULLET_INSTANCE = p.GUI
 WATCHDOG = True
 PLOTTING = True
 
@@ -262,6 +262,12 @@ def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "s
                 #target_pos, target_var, gnd_weight, mdist, real_eff_history = load_experiment(
                 #    "simulated-dataset/{}/{}/{}/effData_X.txt".format(tool_name, object_name, action_name),
                 #    get_eff_data=True)
+
+
+                #Fixed orientations list
+                orientations_list = [-np.pi / 2, -np.pi/3, -np.pi / 4, -np.pi / 6, -np.pi / 12, -np.pi / 36, 0, np.pi / 36, np.pi / 12,
+                        np.pi / 6, np.pi / 4, np.pi/3, np.pi / 2]
+
                 for iter in range(N_EXPERIMENTS):
                     success = False
                     while not success:
@@ -280,8 +286,20 @@ def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "s
                                 raise ValueError
 
                             mu = init_poses[tool_name][action_name]
-                            yaw, pitch, roll, x, y = np.random.uniform(np.array([-np.pi/6, 0.0, 0.0, mu[3], mu[4]]),
-                                                                       np.array([np.pi/6, 0.0, 0.0, mu[3], mu[4]]))
+
+                            #Orientations:
+
+                            #With fixed values: [-90, -45, -30, -15, -5, 0, 5, 15, 30, 45, 90]
+                            yaw = orientations_list[iter]
+                            pitch = 0
+                            roll = 0
+                            x, y = np.random.uniform( np.array([mu[3], mu[4]]), np.array( [mu[3], mu[4]]))
+
+                            #With a uniform distribution
+                            #yaw, pitch, roll, x, y = np.random.uniform(np.array([-np.pi/6, 0.0, 0.0, mu[3], mu[4]]),
+                            #                                           np.array([np.pi/6, 0.0, 0.0, mu[3], mu[4]]))
+
+                            #With a normal distribution
                             #yaw, pitch, roll, x, y = np.random.normal(mu, np.array([1.0, 1.0, 1.0, 0.0, 0.0]))
                             initial_xy = np.array([x, y])
 
@@ -364,10 +382,10 @@ def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "s
 
                             success = True
 
-
-                            file = open("simulated-dataset/{}/{}/{}/effData_X_5exp.txt".format(tool_name, object_name,action_name), "a+")
+                            #Save the Dataset File
+                            file = open("simulated-dataset/{}/{}/{}/effData_OY.txt".format(tool_name, object_name,action_name), "a+")
                             file.write(str(tool_name) + " " +str(object_name) + " " + str(actionId) + " " + str(initial_xy[0]) + " " + str(initial_xy[1]) +
-                                       " " + str(-1) + " " + str(-1) + " " + str(pos[0]) + " " + str(pos[1]) + " " + str(-1) + " " + str(-1) + "\n")
+                                       " " + str(-1) + " " + str(-1) + " " + str(pos[0]) + " " + str(pos[1]) + " " + str(-1) + " " + str(-1) + " " + str(orientations_list[iter]) + " " + str(0) + " " + str(0) + " " + "\n")
                             file.close()
 
 
@@ -495,7 +513,7 @@ if __name__ == "__main__":
     call_simulator()
     param_names = ['lateralFriction', 'rollingFriction', 'mass']  # , 'xnoise', 'ynoise']
 
-    object_name = ["yball", ]
+    object_name = ["ylego", ]
     # object_name = ["lemon",]
 
 
