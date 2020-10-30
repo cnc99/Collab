@@ -1,29 +1,28 @@
 #!/usr/bin/python3
 from __future__ import print_function, division, absolute_import
 
-import statistics
+import functools
+import logging
+import multiprocessing
+import os
+import sys
 import time
 import xml.etree.ElementTree as ET
+from contextlib import contextmanager
+from pprint import pprint
 
 import numpy as np
 import pandas as pd
-import stl
-from pprint import pprint
 import pybullet
 import pybullet_data
 import pybullet_utils.bullet_client as bc
+import stl
+from joblib import delayed, Parallel
+from matplotlib import pyplot as plt
 from skopt import dump, load
 from tqdm import tqdm
-import os
-import sys
-from contextlib import contextmanager
-from matplotlib import pyplot as plt
-from continuous_kl import KL_from_distributions as KLD
-import logging
-import multiprocessing
-import functools
-from joblib import delayed, Parallel
 
+from continuous_kl import KL_from_distributions as KLD
 
 PYBULLET_INSTANCE = pybullet.DIRECT
 PLOTTING = True
@@ -119,7 +118,7 @@ models = {
 def load_experiment(fname="effData.txt", get_eff_data=False):
   colnames = ['toolName', 'targetName', 'actionId', 'initialObjPos[0]', 'initialObjPos[1]', 'initialObjImgPos.x',
               'initialObjImgPos.y', 'finalObjectPos[0]',
-              'finalObjectPos[1]', 'finalObjImgPos.x', 'finalObjImgPos.y']
+              'finalObjectPos[1]', 'finalObjImgPos.x', 'finalObjImgPos.y', 'yaw', 'pitch', 'roll']
   df = pd.read_csv(fname, delim_whitespace=True, names=colnames)
 
   diffx = (df['finalObjectPos[0]'] - df['initialObjPos[0]'])
@@ -131,7 +130,10 @@ def load_experiment(fname="effData.txt", get_eff_data=False):
 
   weight = 1e-3 * 10 #models[df['targetName'][0]][1]
 
-  return (mvec, vvec, weight, mdist, np.vstack([diffx, diffy]).T) if get_eff_data else (mvec, vvec, weight, mdist)
+  # Orientations
+  initial_orientations = (df['yaw'], df['pitch'], df['roll'])
+
+  return (mvec, vvec, weight, mdist, np.vstack([diffx, diffy]).T, initial_orientations) if get_eff_data else (mvec, vvec, weight, mdist)
 
 
 def call_simulator(p):
@@ -239,15 +241,17 @@ def experiment_setup(params, param_names, pbar, object_name, tools, actions):
         #          "affordance-datasets/visual-affordances-of-objects-and-tools/{}/{}/{}/effData.txt".format(tool_name, object_name, action_name), get_eff_data=True)
 
         # Read simulated dataset:
-        target_pos, target_var, gnd_weight, mdist, real_eff_history = load_experiment(
-                   "simulated-dataset/{}/{}/{}/effData.txt".format(tool_name, object_name, action_name),get_eff_data=True)
+        target_pos, target_var, gnd_weight, mdist, real_eff_history, init_orientations = load_experiment(
+                   "simulated-dataset/{}/{}/{}/effData_OYPR.txt".format(tool_name, object_name, action_name),get_eff_data=True)
 
 
-        single_effs = Parallel(n_jobs=3)(delayed(single_experiment)(dic_params,
+        single_effs = Parallel(n_jobs=15)(delayed(single_experiment)(dic_params,
                   tool_name,
                   object_name,
                   action_name,
-                  idx+print_info) for idx in range(N_EXPERIMENTS))
+                  init_orientations,
+                  idx+print_info,
+                  idx) for idx in range(N_EXPERIMENTS))
 
         print_info += 1
         sim_eff_history = np.array(single_effs, dtype=np.float)
@@ -285,15 +289,17 @@ def experiment_setup(params, param_names, pbar, object_name, tools, actions):
     pbar.update(1)
 
     #write a file with all the parameters from the optimisation
-    file = open("plots/Dataset_X_Opt-to-Sim_Results.txt", "a+")
+    file = open("plots/Dataset_OYPR_Opt-to-Sim_Results.txt", "a+")
     file.write(str(params[0]) + " " + str(params[1]) + " " + str(params[2]) + " " + str(out) + "\n")
     file.close()
+
 
     return out
 
 
 @with_timeout(10.0)
-def single_experiment(dic_params, tool_name, object_name, action_name, idx):
+def single_experiment(dic_params, tool_name, object_name, action_name, init_orientations, idx, iter_count):
+  from parametersConfig import orientations_list
   p = bc.BulletClient(connection_mode=pybullet.DIRECT)
   call_simulator(p)
   objID = load_object(p)
@@ -330,8 +336,22 @@ def single_experiment(dic_params, tool_name, object_name, action_name, idx):
 
 
           mu = init_poses[tool_name][action_name]
-          yaw, pitch, roll, x, y = np.random.uniform(np.array([-np.pi/6,0.0,0.0, mu[3], mu[4]]),np.array([np.pi/6,0.0,0.0, mu[3], mu[4]]))
+
+          #Orientations:
+
+          #Uniform distribution
+          #yaw, pitch, roll, x, y = np.random.uniform(np.array([-np.pi/6,0.0,0.0, mu[3], mu[4]]),np.array([np.pi/6,0.0,0.0, mu[3], mu[4]]))
+
+          #Normal distribution
           #yaw, pitch, roll, x, y = np.random.normal(mu, np.array([1.0, 1.0, 1.0, 0.0, 0.0]))  #yaw: around the z axis
+
+          # With fixed values: [-90, -45, -30, -15, -5, 0, 5, 15, 30, 45, 90]
+          yaw = init_orientations[0][iter_count]
+          pitch = init_orientations[1][iter_count]
+          roll = init_orientations[2][iter_count]
+          x, y = np.random.uniform(np.array([mu[3], mu[4]]), np.array([mu[3], mu[4]]))
+
+
           initial_xy = np.array([x, y])
 
           p.resetBasePositionAndOrientation(objID, posObj=[x, y, 0.05], ornObj=p.getQuaternionFromEuler([roll, pitch, yaw]))
@@ -411,6 +431,7 @@ def single_experiment(dic_params, tool_name, object_name, action_name, idx):
 
 
 
+
       except ValueError:
           p.resetSimulation()
           p.setAdditionalSearchPath(pybullet_data.getDataPath())  # optionally
@@ -439,7 +460,7 @@ def optimize(param_names, fname):
 
 
 def not_optimize(param_names, fname):
-    from parametersConfig import train_tools, train_actions, test_actions, test_tools
+    from parametersConfig import train_tools, train_actions
     with tqdm(total= 1, file=sys.stdout) as pbar:
         run_experiment = gen_run_experiment(pbar, param_names, train_tools, train_actions)
         params = [2.00, 2.00, 2.00]

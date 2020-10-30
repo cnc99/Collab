@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from __future__ import print_function, division, absolute_import
 
+import itertools
 import xml.etree.ElementTree as ET
 
 import numpy as np
@@ -21,9 +22,9 @@ from continuous_kl import KL_from_distributions as KLD
 import logging
 import time
 
-N_EXPERIMENTS = 13  # running experiment per object per tool
-N_TRIALS = 20  # optimization steps
-PYBULLET_INSTANCE = p.GUI
+N_EXPERIMENTS = 20  # running experiment per object per tool
+N_TRIALS = 30  # optimization steps
+PYBULLET_INSTANCE = p.DIRECT
 WATCHDOG = True
 PLOTTING = True
 
@@ -104,7 +105,7 @@ def load_experiment(fname="effData.txt", get_eff_data=False):
     # List with tools, action performed, objects and their positions (initial and final)
     colnames = ['toolName', 'targetName', 'actionId', 'initialObjPos[0]', 'initialObjPos[1]', 'initialObjImgPos.x',
                 'initialObjImgPos.y', 'finalObjectPos[0]',
-                'finalObjectPos[1]', 'finalObjImgPos.x', 'finalObjImgPos.y']
+                'finalObjectPos[1]', 'finalObjImgPos.x', 'finalObjImgPos.y', 'yaw', 'pitch', 'roll']
     # collects the data from the experiment
     df = pd.read_csv(fname, delim_whitespace=True, names=colnames)
 
@@ -120,6 +121,9 @@ def load_experiment(fname="effData.txt", get_eff_data=False):
     vvec = np.array([diffx.var(), diffy.var()])
 
     weight = 1e-3 * models[df['targetName'][0]][1]
+
+    #Orientations
+    initial_orientations = (df['yaw'], df['pitch'], df['roll'])
 
     return (mvec, vvec, weight, mdist, np.vstack([diffx, diffy]).T) if get_eff_data else (mvec, vvec, weight, mdist)
 
@@ -259,14 +263,16 @@ def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "s
                                                                                                               object_name,
                                                                                                               action_name),
                     get_eff_data=True)
-                #target_pos, target_var, gnd_weight, mdist, real_eff_history = load_experiment(
-                #    "simulated-dataset/{}/{}/{}/effData_X.txt".format(tool_name, object_name, action_name),
+                #target_pos, target_var, gnd_weight, mdist, real_eff_history, init_orientations = load_experiment(
+                #    "simulated-dataset/{}/{}/{}/effData_OY.txt".format(tool_name, object_name, action_name),
                 #    get_eff_data=True)
 
 
                 #Fixed orientations list
-                orientations_list = [-np.pi / 2, -np.pi/3, -np.pi / 4, -np.pi / 6, -np.pi / 12, -np.pi / 36, 0, np.pi / 36, np.pi / 12,
-                        np.pi / 6, np.pi / 4, np.pi/3, np.pi / 2]
+                #orientations_list = [-np.pi / 2, -np.pi/3, -np.pi / 4, -np.pi / 6, -np.pi / 12, -np.pi / 36, 0, np.pi / 36, np.pi / 12,
+                #        np.pi / 6, np.pi / 4, np.pi/3, np.pi / 2]
+                orientations_list = [0, np.pi/36, np.pi/6, np.pi/2]
+                orientations_list = list(itertools.combinations_with_replacement(orientations_list, 3))
 
                 for iter in range(N_EXPERIMENTS):
                     success = False
@@ -290,9 +296,9 @@ def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "s
                             #Orientations:
 
                             #With fixed values: [-90, -45, -30, -15, -5, 0, 5, 15, 30, 45, 90]
-                            yaw = orientations_list[iter]
-                            pitch = 0
-                            roll = 0
+                            yaw = orientations_list[iter][0]
+                            pitch = orientations_list[iter][1]
+                            roll = orientations_list[iter][2]
                             x, y = np.random.uniform( np.array([mu[3], mu[4]]), np.array( [mu[3], mu[4]]))
 
                             #With a uniform distribution
@@ -301,6 +307,7 @@ def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "s
 
                             #With a normal distribution
                             #yaw, pitch, roll, x, y = np.random.normal(mu, np.array([1.0, 1.0, 1.0, 0.0, 0.0]))
+
                             initial_xy = np.array([x, y])
 
                             p.resetBasePositionAndOrientation(objID, posObj=[x, y, 0.05], ornObj=p.getQuaternionFromEuler([roll, pitch, yaw]))
@@ -383,9 +390,9 @@ def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "s
                             success = True
 
                             #Save the Dataset File
-                            file = open("simulated-dataset/{}/{}/{}/effData_OY.txt".format(tool_name, object_name,action_name), "a+")
+                            file = open("simulated-dataset/{}/{}/{}/effData_OYPR.txt".format(tool_name, object_name,action_name), "a+")
                             file.write(str(tool_name) + " " +str(object_name) + " " + str(actionId) + " " + str(initial_xy[0]) + " " + str(initial_xy[1]) +
-                                       " " + str(-1) + " " + str(-1) + " " + str(pos[0]) + " " + str(pos[1]) + " " + str(-1) + " " + str(-1) + " " + str(orientations_list[iter]) + " " + str(0) + " " + str(0) + " " + "\n")
+                                       " " + str(-1) + " " + str(-1) + " " + str(pos[0]) + " " + str(pos[1]) + " " + str(-1) + " " + str(-1) + " " + str(orientations_list[iter][0]) + " " + str(orientations_list[iter][1]) + " " + str(orientations_list[iter][2]) + " " + "\n")
                             file.close()
 
 
@@ -425,12 +432,19 @@ def gen_run_experiment(pbar, param_names, object_name="ylego", tools=("rake", "s
                 sim_eff_history = np.zeros((N_EXPERIMENTS, 2))
                 logging.info("cost:{}".format(kld))
 
+
         if WATCHDOG:
             signal.alarm(0)
         out = sum(costs) / len(costs)
         print('\033[93m' + str(dic_params) + '\033[0m')
         pbar.set_description('cost: %0.2f' % (out))
         pbar.update(1)
+
+        # write a file with all the parameters from the optimisation
+        #file = open("plots/Dataset_OY_Opt-to-Sim_Results.txt", "a+")
+        #file.write(str(params[0]) + " " + str(params[1]) + " " + str(params[2]) + " " + str(out) + "\n")
+        #file.close()
+
         return out
 
     return f
@@ -452,7 +466,7 @@ def optimize(param_names, fname, object_name="bball", opt_f=gp_minimize):
 def not_optimize(param_names, fname, object_name="bball"):
     with tqdm(total= 1, file=sys.stdout) as pbar:
         run_experiment = gen_run_experiment(pbar, param_names, object_name=object_name)
-        params = [2.00, 2.00, 2.00]
+        params = [4.995, 1e-12, 0.00135]
         cost = run_experiment(params)
 
         run_experiment_test = gen_run_experiment(pbar, param_names, object_name= object_name, tools=("hook",))
